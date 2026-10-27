@@ -163,10 +163,7 @@ Symbole und Farben stehen in `wortsymbole.js`, die Sätze in `wortarten.js`.
 `hintergrund.js` hat ein Motiv je Fach (Startseite: Mischung). Für ein neues Fach dort einen Eintrag ergänzen
 und in `app.css` die Farben unter `.hintergrund[data-thema="…"]`.
 
-## Passwort
 
-`intelligere` (Groß-/Kleinschreibung egal; lateinisch für „verstehen, begreifen“). Im Code steht nur eine Prüfsumme (`app.js`).
-Das ist ein Sichtschutz, keine echte Sicherheit. Das Gerät merkt sich die Freigabe, bis man unten auf „Abmelden“ tippt.
 
 ## Neue Bereiche ergänzen
 
