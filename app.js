@@ -57,12 +57,26 @@ import { starteWortbausteine } from './wortbausteine.js';
 import { starteNomenprobe } from './nomenprobe.js';
 import { enterSteuerung } from './enter.js';
 import { starteProzent } from './prozent.js';
+import { starteDezimal } from './dezimal.js';
+import { starteDreiformen } from './dreiformen.js';
+import { startePlusMinus } from './plusminus.js';
+import { starteZuordnung } from './zuordnung.js';
+import { starteTerme } from './terme.js';
+import { starteZufall } from './zufall.js';
+import { starteWinkel } from './winkel.js';
+import { starteFelder } from './felder.js';
+import { starteSilbenhaus } from './silbenhaus.js';
+import { starteWortfamilie } from './wortfamilie.js';
+import { starteZeitstrahl } from './zeitstrahl.js';
+import { starteDassDas } from './dassdas.js';
+import { starteTextmapping } from './textmapping.js';
+
 
 /** Bausteine, die ohne Aufgabenwahl direkt starten. */
 const DIREKT = {
   sieb: starteSieb, gesetze: starteGesetze, potenzen: startePotenzen,
   spiegel: starteSpiegel, vierecke: starteVierecke, koordinaten: starteKoordinaten,
-  bruchkreise: starteBruchkreise, bruchstreifen: starteBruchstreifen, anteile: starteAnteile, anteilwelcher: starteAnteilWelcher, anteilvom: starteAnteilVom, erweitern: starteErweitern, kuerzen: starteKuerzen, prozent: starteProzent, teilberechnen: starteTeilBerechnen, ganzesberechnen: starteGanzesBerechnen, bruchquotient: starteBruchQuotient, bruchstrahl: starteBruchStrahl, vorzeichen: starteVorzeichen,
+  bruchkreise: starteBruchkreise, bruchstreifen: starteBruchstreifen, anteile: starteAnteile, anteilwelcher: starteAnteilWelcher, anteilvom: starteAnteilVom, erweitern: starteErweitern, kuerzen: starteKuerzen, prozent: starteProzent, dezimal: starteDezimal, dreiformen: starteDreiformen, plusminus: startePlusMinus, zuordnung: starteZuordnung, terme: starteTerme, zufall: starteZufall, winkel: starteWinkel, felder: starteFelder, silbenhaus: starteSilbenhaus, wortfamilie: starteWortfamilie, zeitstrahl: starteZeitstrahl, dassdas: starteDassDas, textmapping: starteTextmapping, teilberechnen: starteTeilBerechnen, ganzesberechnen: starteGanzesBerechnen, bruchquotient: starteBruchQuotient, bruchstrahl: starteBruchStrahl, vorzeichen: starteVorzeichen,
   rechenrahmen: starteRechenrahmen, zahlenstrahl: starteZahlenstrahl, umtauschen: starteUmtauschen, geld: starteGeld, diagramm: starteDiagramm,
   auslegen: starteAuslegen, zerlegen: starteZerlegen, umfang: starteUmfang, einheiten: starteEinheiten,
   netze: starteNetze, quader: starteQuader, ansichten: starteAnsichten,

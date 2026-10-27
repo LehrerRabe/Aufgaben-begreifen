@@ -79,6 +79,7 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
 - **Spiegelbrett:** Achse senkrecht, waagerecht, schräg, Punktspiegelung, frei gestalten; „Spiegel klappen“ klappt die Vorlage sichtbar um.
 - **Vierecke formen:** Ecken ziehen; gleich lange Stäbe gleich gefärbt, rechte Winkel und Parallelen markiert; Haus der Vierecke; Aufgaben.
 - **Koordinaten-Steckbrett:** Punkte stecken (ergibt ein Bild), Koordinaten ablesen, Figur verschieben (mit Weg-Pfeilen x/y).
+- **Winkel** (`winkel.js`): *Winkel drehen* – Schenkel am Winkelmesser ziehen (oder ±1°/±10°), dann Winkelart bestimmen; *Vergleichen* – zwei Winkel mit unterschiedlich langen Schenkeln, danach übereinandergelegt; *Schätzen* – Winkel schätzen, danach mit Winkelmesser.
 
 ## Mathematik: Flächen und Umfang
 
@@ -130,6 +131,31 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
   *Vorzeichen-Detektiv* – Produkte/Quotienten mit 2–4 Zahlen, umschaltbar „Ganze Zahlen“ / „Brüche und Kommazahlen“:
   1. alle negativen Zahlen antippen, 2. Vorzeichen wählen (Bild: je zwei Minus-Chips werden ein Plus), 3. Betrag eingeben (Bruch 3/4 oder Kommazahl; gleichwertige Brüche zählen).
   Die Gestaltung bringt der Baustein selbst mit (`<style id="vz-stil">`), `app.css` bleibt unverändert.
+- **Plus und Minus mit Vorzeichen** (`plusminus.js`): *Plättchen* – blau = +1, rot = −1; dazulegen bzw. wegnehmen, fehlende Plättchen als Nullpaare dazulegen, Nullpaare auflösen, Rest ablesen.
+  *Frosch* – Rechenzeichen bestimmt die Blickrichtung (+ rechts, − umdrehen), Vorzeichen der Zahl die Hüpfrichtung (vorwärts/rückwärts); jeder Sprung einzeln.
+
+## Mathematik: Dezimalzahlen
+
+- **Dezimalzahlen verstehen** (`dezimal.js`), drei Reiter:
+  *Stellentafel* – Plättchen in Z | E , z | h | t legen (+/−), zehn Plättchen einer Spalte zu einem der nächsten bündeln („10 → 1“); im Wechsel Zahl legen und gelegte Zahl lesen.
+  *Zahlenstrahl mit Lupe* – in einen Abschnitt tippen zoomt hinein (Einer → Zehntel → Hundertstel → Tausendstel); Zahl finden bzw. eine Zahl zwischen zwei Nachbarn finden.
+  *Vergleichen* – zwei Dezimalzahlen (auch Fallen wie 0,5 / 0,45 und 0,4 / 0,40) mit <, =, >; danach Stellentafel mit aufgefüllten Nullen und Balken.
+
+## Mathematik: Zuordnungen
+
+- **Proportional rechnen** (`zuordnung.js`): *Doppelskala* – zwei Zahlenstrahlen übereinander; erst auf 1 zurück (: m), dann auf die gesuchte Menge (· n), Bögen oben und unten gleich.
+  *Proportional?* – Wertetabelle und Graph; entscheiden „ja/nein“, danach Quotientenzeile und Ursprungsgerade.
+
+## Mathematik: Terme und Gleichungen
+
+- **Terme und Gleichungen** (`terme.js`): *Muster und Terme* – wachsende Bilder (Tische und Stühle, Streichholz-Quadrate, L aus Plättchen, Dreiecke aus Hölzchen),
+  Anzahlen für Bild 1–4 zählen, passenden Term wählen, Probe für Bild 10. Fester Teil orange, wachsender Teil blau.
+  *Gleichungen mit der Waage* – Säckchen (x) und Würfel (1) antippen nimmt sie weg; die Waage kippt, bis auf der anderen Seite dasselbe weggenommen ist; am Ende die Würfel auf die Säckchen aufteilen.
+
+## Mathematik: Wahrscheinlichkeit
+
+- **Zufall untersuchen** (`zufall.js`): *Glücksrad* – 1×, 10×, 100×, 1000× drehen, Strichliste und Kurve der relativen Häufigkeit (log. Achse); danach die Wahrscheinlichkeit aus den gleich großen Feldern (erst ab 100 Drehungen prüfbar).
+  *Baumdiagramm* – Urne, zweimal ziehen mit/ohne Zurücklegen; alle Zweige mit Brüchen beschriften, dann eine Pfadwahrscheinlichkeit (Produkt) berechnen.
 
 ## Mathematik: Prozentrechnung
 
@@ -140,6 +166,8 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
   3. Werte aus der Aufgabe einsetzen (Hinweis bei vertauschten Werten). 4. Ausrechnen (Hinweise bei „mal 15 statt 0,15“ und Dezimalzahl statt Prozent).
   Sachkontexte: Rabatt, Klasse, Umfrage, Saftschorle, Wanderung, Taschengeld; nur ganzzahlige Werte.
 
+- **Bruch, Dezimalzahl, Prozent** (`dreiformen.js`): gegebenen Anteil im Hunderterfeld färben (Kästchen oder ganze Zehnerreihe), dann die zwei anderen Schreibweisen eintragen.
+
 ## Deutsch: Wortarten untersuchen
 
 Menü: **Deutsch → Wortarten → Wortarten untersuchen**. Über jedes Wort eines einfachen Satzes wird das Symbol seiner Wortart gelegt
@@ -147,6 +175,9 @@ Menü: **Deutsch → Wortarten → Wortarten untersuchen**. Über jedes Wort ein
 Stufe 1 Nomen, Artikel, Adjektiv, Verb · Stufe 2 dazu Pronomen, Präposition, Konjunktion · Stufe 3 dazu Adverb.
 Hilfen: Namen zeigen, Tipp (Merkfrage zum Wort), Prüfen, Lösung zeigen. Merkkarte mit allen Symbolen auf der Auswahlseite.
 Symbole und Farben stehen in `wortsymbole.js`, die Sätze in `wortarten.js`.
+
+- **Zeitformen** (`zeitstrahl.js`): *Wann passiert es?* – Satz auf den Zeitstrahl legen (vor der Vergangenheit / Vergangenheit / jetzt / Zukunft), dann die Zeitform benennen; danach derselbe Satz in allen fünf Zeitformen, Verbteile farbig.
+  *Was war zuerst?* – zwei Ereignisse ordnen; das frühere steht im Plusquamperfekt.
 
 - **Groß oder klein? (Nomenprobe):** Begleiterprobe (auch versteckt in *beim, zum, im*) und Adjektivprobe; dann groß oder klein wählen.
 
@@ -157,6 +188,20 @@ Symbole und Farben stehen in `wortsymbole.js`, die Sätze in `wortarten.js`.
   (nach verbreiteten Satzzerlegungs-Materialien); **Dativobjekt (schwarzer Ring) und Adverbiale (oranger Kreis) sind eigene Wahl** – in `satzglieder.js` änderbar.
 - **Wortbausteine:** Vorsilbe (blau) + Wortstamm (rot) + Endung (grün) für die Familien *fahr, spiel, schreib*; Wörter bauen und Wörter zerlegen.
   Die Liste gültiger Wörter steht in `wortbausteine.js`.
+- **Das Feldermodell** (`felder.js`): Satzglieder in Vorfeld | linke Klammer | Mittelfeld | rechte Klammer | Nachfeld legen.
+  *Hauptsätze* – Verbklammer; *Nebensätze und Komma* – Einleitewort in der linken, Verb in der rechten Klammer, danach das Komma setzen.
+
+## Deutsch: Rechtschreibung
+
+- **Doppelte Mitlaute – das Silbenhaus** (`silbenhaus.js`): Wort aus einer Rätselbeschreibung; erst entscheiden, ob der Vokal lang oder kurz ist.
+  Bild: Haus (Anfang, Vokal, Schluss-Zimmer) plus Garage (2. Silbe). Kurzer Vokal → Schluss-Zimmer muss besetzt sein → Mitlaut doppelt (bzw. ck/tz).
+- **Ableiten und Verlängern** (`wortfamilie.js`): ä/e, äu/eu durch ein verwandtes Wort, d/t, b/p, g/k durch Verlängern; Hilfswort auswählen, Buchstaben einsetzen, Wortfamilie mit markiertem Stamm.
+- **das oder dass?** (`dassdas.js`): Ersatzprobe mit *dieses / welches / dies*; bei „dass“ leuchten Komma, Einleitewort und Verb am Ende.
+
+## Deutsch: Lesen
+
+- **Textmapping** (`textmapping.js`): Sachtext (Igel, Vulkane, Honigbiene) in vier Schritten: Überschriften markieren, fett gedruckte Schlüsselwörter markieren,
+  Schlüsselwörter an die Text-Karte hängen, drei Fragen mit Rückverweis auf den Abschnitt beantworten.
 
 ## Hintergrund je Fach
 
@@ -191,12 +236,15 @@ Neue Bausteine nutzen `geruest.js` (Kopf, Reiter, Sprechblase, Material links, A
 - `kopfrechnen.js` – Kopfrechnen (Plus/Minus mit freiem Abakus, kleines Einmaleins)
 - `abakus.js`, `stellenwerttafel.js`, `einheitentafel.js`, `schrittstrahl.js` – Stellenwerte
 - `rechenrahmen.js`, `zahlenstrahl.js`, `umtauschen.js`, `geld.js`, `diagramm.js` – Zahlen und Größen
-- `spiegel.js`, `vierecke.js`, `koordinaten.js` – Symmetrie und Figuren
+- `spiegel.js`, `vierecke.js`, `koordinaten.js`, `winkel.js` – Symmetrie und Figuren
 - `auslegen.js`, `zerlegen.js`, `umfang.js`, `einheiten.js` – Flächen und Umfang
 - `netze.js`, `quader.js`, `ansichten.js` – Körper und Volumen
 - `bruchkreise.js`, `bruchstreifen.js`, `anteile.js`, `bruchteil.js`, `bruchumformen.js`, `bruchstrahl.js` – Brüche
-- `vorzeichen.js` – Rationale Zahlen: Mal und Geteilt mit Vorzeichen
-- `wortsymbole.js`, `wortarten.js`, `nomenprobe.js`, `satzglieder.js`, `wortbausteine.js` – Deutsch
+- `vorzeichen.js`, `plusminus.js` – Rationale Zahlen
+- `dezimal.js`, `dreiformen.js` – Dezimalzahlen, Bruch–Dezimal–Prozent
+- `zuordnung.js`, `terme.js`, `zufall.js`, `winkel.js` – Zuordnungen, Terme/Waage, Wahrscheinlichkeit, Winkel
+- `wortsymbole.js`, `wortarten.js`, `nomenprobe.js`, `satzglieder.js`, `wortbausteine.js`, `felder.js`, `zeitstrahl.js` – Deutsch: Wortarten und Sätze
+- `silbenhaus.js`, `wortfamilie.js`, `dassdas.js`, `textmapping.js` – Deutsch: Rechtschreibung und Lesen
 - `menue.js`, `bilder.js`, `hintergrund.js`, `logo.js` – Menü, Kachelbilder, Hintergründe, Icon
 - `manifest.webmanifest`, `icon*.png`, `icon.svg` – für den Home-Bildschirm
 

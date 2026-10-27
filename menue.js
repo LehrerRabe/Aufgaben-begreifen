@@ -105,6 +105,7 @@ export const MENUE = {
             { id: 'vierecke', titel: 'Vierecke formen', text: 'Stäbe ziehen, Vierecke erkennen', bild: 'vierecke', farbe: '#16a974', modul: 'vierecke' },
             { id: 'koordinaten', titel: 'Koordinaten-Steckbrett', text: 'Punkte stecken, ablesen, verschieben', bild: 'koordinaten', farbe: '#f29a12', modul: 'koordinaten' },
             { id: 'dreiecke', titel: 'Dreiecke und Geraden', text: 'Besondere Dreiecke, parallel, senkrecht', bild: 'dreiecke', farbe: '#7a3cc2', modul: 'dreiecke' },
+            { id: 'winkel', titel: 'Winkel', text: 'Drehen, vergleichen, schätzen', bild: 'winkel', farbe: '#f07d2a', modul: 'winkel' },
           ],
         },
         {
@@ -153,12 +154,23 @@ export const MENUE = {
           ],
         },
         {
+          id: 'dezimal',
+          titel: 'Dezimalzahlen',
+          text: 'Stellentafel, Lupe, vergleichen',
+          bild: 'dezimal-ordner',
+          farbe: '#7a3cc2',
+          kinder: [
+            { id: 'verstehen', titel: 'Dezimalzahlen verstehen', text: 'Stellentafel, Zahlenstrahl mit Lupe, vergleichen', bild: 'dezimal', farbe: '#7a3cc2', modul: 'dezimal' },
+          ],
+        },
+        {
           id: 'rational',
           titel: 'Rationale Zahlen',
           text: 'Malnehmen und Teilen mit Vorzeichen',
           bild: 'rational-ordner',
           farbe: '#c2410c',
           kinder: [
+            { id: 'plusminus', titel: 'Plus und Minus mit Vorzeichen', text: 'Plättchen und Nullpaare, Frosch', bild: 'plusminus', farbe: '#e0262b', modul: 'plusminus' },
             { id: 'vorzeichen', titel: 'Mal und Geteilt mit Vorzeichen', text: 'Muster, Zahlenstrahl, Vorzeichen-Detektiv', bild: 'vorzeichen', farbe: '#2f6fe4', modul: 'vorzeichen' },
           ],
         },
@@ -170,6 +182,37 @@ export const MENUE = {
           farbe: '#0e9f6e',
           kinder: [
             { id: 'dreieck', titel: 'Prozent-Dreieck', text: 'W, G oder p % – abdecken, einsetzen, rechnen', bild: 'prozent-dreieck', farbe: '#0e9f6e', modul: 'prozent' },
+            { id: 'dreiformen', titel: 'Bruch, Dezimalzahl, Prozent', text: 'Ein Bild – drei Schreibweisen', bild: 'dreiformen', farbe: '#0e7490', modul: 'dreiformen' },
+          ],
+        },
+        {
+          id: 'zuordnungen',
+          titel: 'Zuordnungen',
+          text: 'Doppelskala und Dreisatz',
+          bild: 'zuordnung-ordner',
+          farbe: '#0e7490',
+          kinder: [
+            { id: 'doppelskala', titel: 'Proportional rechnen', text: 'Doppelskala, Dreisatz, proportional?', bild: 'zuordnung', farbe: '#0e7490', modul: 'zuordnung' },
+          ],
+        },
+        {
+          id: 'terme',
+          titel: 'Terme und Gleichungen',
+          text: 'Muster und Waage',
+          bild: 'terme-ordner',
+          farbe: '#2f6fe4',
+          kinder: [
+            { id: 'muster', titel: 'Terme und Gleichungen', text: 'Wachsende Muster, Gleichungswaage', bild: 'terme', farbe: '#2f6fe4', modul: 'terme' },
+          ],
+        },
+        {
+          id: 'zufall',
+          titel: 'Wahrscheinlichkeit',
+          text: 'Glücksrad und Baumdiagramm',
+          bild: 'zufall-ordner',
+          farbe: '#a64ad6',
+          kinder: [
+            { id: 'versuche', titel: 'Zufall untersuchen', text: 'Oft drehen, Baumdiagramm', bild: 'zufall', farbe: '#a64ad6', modul: 'zufall' },
           ],
         },
       ],
@@ -190,6 +233,7 @@ export const MENUE = {
           kinder: [
             { id: 'untersuchen', titel: 'Wortarten untersuchen', text: 'Symbole über die Wörter legen', bild: 'wortarten', farbe: '#2b4bb5', modul: 'wortarten' },
             { id: 'nomenprobe', titel: 'Groß oder klein?', text: 'Die Nomenprobe', bild: 'nomenprobe', farbe: '#e0457b', modul: 'nomenprobe' },
+            { id: 'zeitformen', titel: 'Zeitformen', text: 'Sätze auf den Zeitstrahl legen', bild: 'zeitstrahl', farbe: '#c2410c', modul: 'zeitstrahl' },
           ],
         },
         {
@@ -201,6 +245,29 @@ export const MENUE = {
           kinder: [
             { id: 'satzglieder', titel: 'Satzglieder', text: 'Umstellen und bestimmen', bild: 'satzglieder', farbe: '#2b4bb5', modul: 'satzglieder' },
             { id: 'wortbausteine', titel: 'Wortbausteine', text: 'Vorsilbe, Stamm, Endung', bild: 'wortbausteine', farbe: '#13a39b', modul: 'wortbausteine' },
+            { id: 'felder', titel: 'Das Feldermodell', text: 'Verbklammer, Nebensatz, Komma', bild: 'felder', farbe: '#f07d2a', modul: 'felder' },
+          ],
+        },
+        {
+          id: 'rechtschreibung',
+          titel: 'Rechtschreibung',
+          text: 'Silbenhaus, Ableiten, das oder dass',
+          bild: 'rechtschreibung-ordner',
+          farbe: '#2f6fe4',
+          kinder: [
+            { id: 'silbenhaus', titel: 'Doppelte Mitlaute', text: 'Das Silbenhaus', bild: 'silbenhaus', farbe: '#e0262b', modul: 'silbenhaus' },
+            { id: 'ableiten', titel: 'Ableiten und Verlängern', text: 'ä oder e? d oder t?', bild: 'wortfamilie', farbe: '#2fae58', modul: 'wortfamilie' },
+            { id: 'dassdas', titel: 'das oder dass?', text: 'Die Ersatzprobe', bild: 'dassdas', farbe: '#7a3cc2', modul: 'dassdas' },
+          ],
+        },
+        {
+          id: 'lesen',
+          titel: 'Lesen',
+          text: 'Sachtexte erschließen',
+          bild: 'lesen-ordner',
+          farbe: '#13a39b',
+          kinder: [
+            { id: 'textmapping', titel: 'Textmapping', text: 'Überschriften, Schlüsselwörter, Text-Karte', bild: 'textmapping', farbe: '#13a39b', modul: 'textmapping' },
           ],
         },
       ],

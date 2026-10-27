@@ -394,6 +394,77 @@ const ZEICHNUNGEN = {
     return t('300,30 230,145 370,145', '#f08c00') + t('230,145 300,145 300,265 160,265', '#2f6fe4') + t('300,145 370,145 440,265 300,265', '#2fae58')
       + zeichen(300, 125, 'W', 54) + zeichen(250, 230, 'G', 54) + zeichen(355, 230, 'p%', 44) + `<rect x="60" y="60" width="90" height="70" rx="10" fill="rgba(255,255,255,.9)"/>` + zeichen(105, 112, '?', 54, '#0e9f6e');
   },
+  'dezimal-ordner': () => zeichen(300, 200, '3,07', 130) + `<rect x="120" y="230" width="360" height="16" rx="8" fill="#fff" opacity=".5"/>`,
+  dezimal: () => {
+    let s = '';
+    const f = ['#2fae58', '#f07d2a', '#d6336c'];
+    ['E', 'z', 'h'].forEach((k, i) => { s += `<rect x="${110 + i * 130}" y="50" width="120" height="44" rx="10" fill="${f[i]}" stroke="#fff" stroke-width="3"/>` + zeichen(170 + i * 130, 84, k, 34); });
+    [3, 0, 7].forEach((n, i) => { for (let j = 0; j < n; j++) s += `<circle cx="${135 + i * 130 + (j % 4) * 24}" cy="${125 + Math.floor(j / 4) * 26}" r="10" fill="${f[i]}" stroke="#fff" stroke-width="2"/>`; });
+    return s + zeichen(232, 150, ',', 90) + zeichen(300, 270, '3,07', 56);
+  },
+  dreiformen: () => {
+    let s = '';
+    for (let r = 0; r < 10; r++) for (let c = 0; c < 10; c++) s += `<rect x="${70 + c * 19}" y="${55 + r * 19}" width="17" height="17" rx="2" fill="${r * 10 + c < 75 ? '#ffd34d' : 'rgba(255,255,255,.3)'}"/>`;
+    return s + zeichen(420, 105, '¾', 64) + zeichen(420, 180, '0,75', 52) + zeichen(420, 250, '75 %', 52);
+  },
+  plusminus: () => {
+    const pl = (x, y, f, t) => `<circle cx="${x}" cy="${y}" r="26" fill="${f}" stroke="#fff" stroke-width="4"/>` + zeichen(x, y + 15, t, 44);
+    let s = '';
+    for (let i = 0; i < 3; i++) s += pl(120 + i * 70, 100, '#2f6fe4', '+');
+    for (let i = 0; i < 2; i++) s += pl(120 + i * 70, 170, '#e0262b', '−') + `<rect x="${90 + i * 70}" y="68" width="60" height="134" rx="30" fill="none" stroke="#fff" stroke-width="4" stroke-dasharray="8 6"/>`;
+    return s + zeichen(460, 160, '= 1', 70) + zeichen(300, 270, '3 + (−2)', 46);
+  },
+  'zuordnung-ordner': () => `<line x1="60" y1="110" x2="540" y2="110" stroke="#fff" stroke-width="8"/><line x1="60" y1="200" x2="540" y2="200" stroke="#ffd34d" stroke-width="8"/>` + [0, 1, 2, 3, 4].map(i => `<line x1="${80 + i * 110}" y1="96" x2="${80 + i * 110}" y2="214" stroke="#fff" stroke-width="3" stroke-dasharray="6 6"/>`).join('') + zeichen(300, 80, 'kg', 40) + zeichen(300, 260, '€', 46),
+  zuordnung: () => {
+    let s = `<line x1="60" y1="110" x2="540" y2="110" stroke="#fff" stroke-width="7"/><line x1="60" y1="200" x2="540" y2="200" stroke="#ffd34d" stroke-width="7"/>`;
+    [[80, '0', '0'], [190, '1', '2'], [410, '3', '6'], [520, '5', '?']].forEach(([x, o, u]) => { s += `<line x1="${x}" y1="96" x2="${x}" y2="214" stroke="#fff" stroke-width="3"/>` + zeichen(x, 80, o, 36) + zeichen(x, 250, u, 36, '#ffd34d'); });
+    return s + `<path d="M410 60 Q300 10 196 60" fill="none" stroke="#fff" stroke-width="4"/>` + zeichen(300, 38, ': 3', 30);
+  },
+  'terme-ordner': () => zeichen(300, 190, '2n + 2', 110),
+  terme: () => {
+    let s = `<rect x="296" y="90" width="8" height="140" fill="#fff"/><rect x="100" y="84" width="400" height="12" rx="6" fill="#fff"/>`;
+    s += `<path d="M90 150 Q160 190 230 150 Z" fill="#fff"/><path d="M370 150 Q440 190 510 150 Z" fill="#fff"/>`;
+    for (let i = 0; i < 2; i++) s += `<path d="M${130 + i * 46} 148 q-4 -30 18 -34 q22 4 18 34 Z" fill="#ffd34d"/>`;
+    for (let i = 0; i < 4; i++) s += `<rect x="${384 + i * 30}" y="${118}" width="26" height="26" rx="4" fill="#ffd34d"/>`;
+    return s + zeichen(300, 275, '2x = 4', 50);
+  },
+  'zufall-ordner': () => {
+    let s = ''; const f = ['#ff5a5a', '#55b7ff', '#ffd34d', '#4cd387'];
+    for (let i = 0; i < 8; i++) { const a0 = i * Math.PI / 4 - Math.PI / 2, a1 = a0 + Math.PI / 4; s += `<path d="M200 150 L${200 + 100 * Math.cos(a0)} ${150 + 100 * Math.sin(a0)} A100 100 0 0 1 ${200 + 100 * Math.cos(a1)} ${150 + 100 * Math.sin(a1)} Z" fill="${f[i % 4]}" stroke="#fff" stroke-width="3"/>`; }
+    return s + `<path d="M188 38 L212 38 L200 62 Z" fill="#fff"/>` + zeichen(440, 175, '⅜', 110);
+  },
+  zufall: () => {
+    let s = `<line x1="80" y1="150" x2="250" y2="80" stroke="#fff" stroke-width="5"/><line x1="80" y1="150" x2="250" y2="220" stroke="#fff" stroke-width="5"/>`;
+    [[80, 0], [220, 1]].forEach(([y0], k) => { const y = k ? 220 : 80; s += `<line x1="270" y1="${y}" x2="440" y2="${y - 40}" stroke="#fff" stroke-width="4"/><line x1="270" y1="${y}" x2="440" y2="${y + 40}" stroke="#fff" stroke-width="4"/>`; void y0; });
+    s += `<circle cx="260" cy="80" r="16" fill="#ff5a5a"/><circle cx="260" cy="220" r="16" fill="#55b7ff"/>`;
+    [[40, '#ff5a5a'], [120, '#55b7ff'], [180, '#ff5a5a'], [260, '#55b7ff']].forEach(([y, f]) => { s += `<circle cx="455" cy="${y}" r="14" fill="${f}"/>`; });
+    return s + `<circle cx="80" cy="150" r="10" fill="#fff"/>`;
+  },
+  winkel: () => `<path d="M140 230 L320 230 A180 180 0 0 0 ${140 + 180 * Math.cos(Math.PI / 3)} ${230 - 180 * Math.sin(Math.PI / 3)} Z" fill="rgba(255,211,77,.5)"/>
+    <line x1="140" y1="230" x2="500" y2="230" stroke="#fff" stroke-width="10" stroke-linecap="round"/><line x1="140" y1="230" x2="${140 + 330 * Math.cos(Math.PI / 3)}" y2="${230 - 330 * Math.sin(Math.PI / 3)}" stroke="#fff" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="${140 + 330 * Math.cos(Math.PI / 3)}" cy="${230 - 330 * Math.sin(Math.PI / 3)}" r="18" fill="#4cd387" stroke="#fff" stroke-width="4"/>` + zeichen(440, 150, '60°', 64),
+  felder: () => {
+    const f = [['Vorfeld', 70, 'rgba(255,255,255,.25)'], ['hat', 175, '#ffd34d'], ['Mittelfeld', 260, 'rgba(255,255,255,.25)'], ['gesehen', 420, '#ffd34d']];
+    let s = '';
+    f.forEach(([t, x, c], i) => { const w = i === 2 ? 150 : i === 3 ? 120 : i === 1 ? 75 : 95; s += `<rect x="${x}" y="100" width="${w}" height="90" rx="12" fill="${c}" stroke="#fff" stroke-width="4"/>` + zeichen(x + w / 2, 156, t, i % 2 ? 30 : 24, i % 2 ? '#7a4e05' : '#fff'); });
+    return s + `<path d="M212 92 L212 70 L480 70 L480 92" fill="none" stroke="#ffd34d" stroke-width="6"/>` + zeichen(300, 260, 'Verbklammer', 40);
+  },
+  'rechtschreibung-ordner': () => zeichen(300, 180, 'Abc', 120) + `<path d="M150 230 q150 40 300 0" fill="none" stroke="#ffd34d" stroke-width="10" stroke-linecap="round"/>`,
+  silbenhaus: () => `<path d="M80 130 L190 50 L300 130 Z" fill="#ff5a5a"/><rect x="80" y="130" width="220" height="110" fill="#fff"/>
+    <rect x="300" y="160" width="200" height="80" fill="rgba(255,255,255,.75)"/>` + zeichen(125, 210, 'M', 54, '#1b2340') + zeichen(190, 210, 'u', 54, '#e0262b') + zeichen(255, 210, 't', 54, '#e0262b') + zeichen(345, 220, 't', 54, '#e0262b') + zeichen(430, 220, 'er', 50, '#1b2340'),
+  wortfamilie: () => zeichen(160, 140, 'Rad', 70) + zeichen(300, 140, '→', 60, '#ffd34d') + zeichen(450, 140, 'Räder', 70) + `<rect x="80" y="180" width="440" height="60" rx="14" fill="rgba(255,255,255,.25)"/>` + zeichen(300, 225, 'a → ä', 46, '#ffd34d'),
+  dassdas: () => `<rect x="70" y="80" width="200" height="100" rx="18" fill="#ffd34d"/><rect x="330" y="80" width="200" height="100" rx="18" fill="rgba(255,255,255,.3)" stroke="#fff" stroke-width="5"/>` + zeichen(170, 152, 'das', 60, '#5a3a00') + zeichen(430, 152, 'dass', 60) + zeichen(300, 260, 'dieses? welches?', 34),
+  zeitstrahl: () => {
+    let s = `<line x1="40" y1="160" x2="540" y2="160" stroke="#fff" stroke-width="8"/><path d="M540 145 570 160 540 175Z" fill="#fff"/><line x1="380" y1="120" x2="380" y2="200" stroke="#ffd34d" stroke-width="8"/>`;
+    [[110, '#c8b6ff'], [240, '#fff'], [480, '#fff']].forEach(([x, f]) => { s += `<circle cx="${x}" cy="160" r="16" fill="${f}"/>`; });
+    return s + zeichen(380, 100, 'jetzt', 34, '#ffd34d') + zeichen(170, 240, 'war · ist · wird', 36);
+  },
+  'lesen-ordner': () => `<rect x="150" y="50" width="300" height="210" rx="14" fill="#fff"/>` + [0, 1, 2, 3, 4].map(i => `<rect x="180" y="${90 + i * 32}" width="${i === 0 ? 160 : 240}" height="${i === 0 ? 18 : 10}" rx="5" fill="${i === 0 ? '#13a39b' : '#c9d3e4'}"/>`).join(''),
+  textmapping: () => {
+    let s = `<rect x="230" y="40" width="140" height="50" rx="12" fill="#7a3cc2"/>`;
+    [[100, '#55b7ff'], [300, '#4cd387'], [500, '#ff9f43']].forEach(([x, f]) => { s += `<line x1="300" y1="90" x2="${x}" y2="150" stroke="#fff" stroke-width="5"/><rect x="${x - 70}" y="150" width="140" height="44" rx="12" fill="${f}"/><rect x="${x - 50}" y="215" width="100" height="26" rx="13" fill="#fff"/><line x1="${x}" y1="194" x2="${x}" y2="215" stroke="#fff" stroke-width="4"/>`; });
+    return s;
+  },
   'teil-berechnen': () => {
     let s = `<path d="M80 60 q0 -18 18 -18 h404 q18 0 18 18" fill="none" stroke="#fff" stroke-width="5"/>` + zeichen(300, 34, '24 €', 34);
     for (let i = 0; i < 4; i++) s += `<rect x="${80 + i * 110}" y="80" width="106" height="80" rx="6" fill="${i < 3 ? '#ffd34d' : 'rgba(255,255,255,.3)'}" stroke="#fff" stroke-width="3"/>` + zeichen(133 + i * 110, 135, '6', 40, i < 3 ? '#7a4e05' : '#fff');
