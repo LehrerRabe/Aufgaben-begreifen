@@ -1,7 +1,7 @@
 # Aufgaben be-greifen
 
 Web-App mit digitalem Material zum Anfassen (vor allem Klasse 5) – Mathematik und Deutsch.
-App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 12 Ordner, Deutsch 2 (insgesamt 48 Bausteine).
+App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 16 Ordner, Deutsch 4 (insgesamt 67 Bausteine).
 
 ## Was die App kann
 
