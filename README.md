@@ -149,7 +149,7 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
 ## Mathematik: Terme und Gleichungen
 
 - **Terme und Gleichungen** (`terme.js`): *Muster und Terme* – wachsende Bilder (Tische und Stühle, Streichholz-Quadrate, L aus Plättchen, Dreiecke aus Hölzchen),
-  Anzahlen für Bild 1–4 zählen, passenden Term wählen, Probe für Bild 10. Fester Teil orange, wachsender Teil blau.
+  Bild 0 ist das Startbild; Anzahlen für Bild 0–3 zählen, passenden Term in der Form „Startbild + Zuwachs · n“ wählen (z. B. 3 + 2 · n), Probe für Bild 10. Startbild orange, jede weitere Stufe blau.
   *Gleichungen mit der Waage* – Säckchen (x) und Würfel (1) antippen nimmt sie weg; die Waage kippt, bis auf der anderen Seite dasselbe weggenommen ist; am Ende die Würfel auf die Säckchen aufteilen.
 
 ## Mathematik: Wahrscheinlichkeit
