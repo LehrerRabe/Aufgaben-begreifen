@@ -577,11 +577,11 @@ const ZEICHNUNGEN = {
 
   /* ---- Block 7: Deutsch ---- */
   'satzbau-ordner': () => `<path d="M100 150 H500" stroke="#fff" stroke-width="6" marker-end=""/>
-      <circle cx="160" cy="150" r="42" fill="#1b2340" stroke="#fff" stroke-width="4"/><circle cx="300" cy="150" r="38" fill="#e0262b" stroke="#fff" stroke-width="4"/>
-      <circle cx="440" cy="150" r="26" fill="#1b2340" stroke="#fff" stroke-width="4"/>`,
+      <circle cx="160" cy="150" r="42" fill="#1f5fd1" stroke="#fff" stroke-width="4"/><circle cx="300" cy="150" r="38" fill="#d7263d" stroke="#fff" stroke-width="4"/>
+      <circle cx="440" cy="150" r="26" fill="#2a9d5c" stroke="#fff" stroke-width="4"/>`,
   satzglieder: () => {
     const k = (x, w, t, f) => `<rect x="${x}" y="110" width="${w}" height="70" rx="12" fill="${f}" stroke="#fff" stroke-width="4"/>` + zeichen(x + w / 2, 158, t, 34, f === '#fff' ? '#1b2340' : '#fff');
-    return k(40, 140, 'Heute', '#fff') + k(190, 110, 'malt', '#e0262b') + k(310, 110, 'Lina', '#fff') + k(430, 130, 'ein Bild', '#fff')
+    return k(40, 140, 'Heute', '#fff') + k(190, 110, 'malt', '#d7263d') + k(310, 110, 'Lina', '#fff') + k(430, 130, 'ein Bild', '#fff')
       + `<path d="M110 100 C110 40 340 40 365 100" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="10 7"/>`;
   },
   wortbausteine: () => {

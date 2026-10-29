@@ -2,17 +2,18 @@
    1. Umstellprobe: Ein Wort antippen – sein ganzes Satzglied rückt an den Anfang, das Verb bleibt an Stelle 2.
       Wörter, die immer zusammen wandern, bilden ein Satzglied.
    2. Satzglieder bestimmen: Symbole zuordnen (mit Fragen).
-   Symbole: Prädikat roter Kreis, Subjekt großer schwarzer Kreis, Akkusativobjekt kleiner schwarzer Kreis
-   (nach verbreiteten Satzzerlegungs-Materialien). Dativobjekt und Adverbiale: eigene Wahl, leicht änderbar. */
+   Symbole (eigene Farbwahl der App, passend zu den Wortarten): Prädikat großer roter Kreis (wie das Verb),
+   Subjekt großer blauer Kreis (wie das Nomen), Akkusativobjekt kleiner grüner Kreis, Dativobjekt grüner Ring,
+   Adverbiale violetter Kreis. Leicht änderbar. */
 
 import { geruest, mischen, warte, bewegung, ESC } from './geruest.js';
 
 export const SATZGLIEDER = {
-  P: { name: 'Prädikat', frage: 'Was tut jemand? Was geschieht?', farbe: '#e0262b', r: 22, art: 'voll' },
-  S: { name: 'Subjekt', frage: 'Wer oder was?', farbe: '#1b1b1b', r: 22, art: 'voll' },
-  AO: { name: 'Akkusativobjekt', frage: 'Wen oder was?', farbe: '#1b1b1b', r: 13, art: 'voll' },
-  DO: { name: 'Dativobjekt', frage: 'Wem?', farbe: '#1b1b1b', r: 13, art: 'ring' },
-  AD: { name: 'Adverbiale', frage: 'Wann? Wo? Wie? Warum?', farbe: '#f28a12', r: 15, art: 'voll' },
+  P: { name: 'Prädikat', frage: 'Was tut jemand? Was geschieht?', farbe: '#d7263d', r: 22, art: 'voll' },
+  S: { name: 'Subjekt', frage: 'Wer oder was?', farbe: '#1f5fd1', r: 22, art: 'voll' },
+  AO: { name: 'Akkusativobjekt', frage: 'Wen oder was?', farbe: '#2a9d5c', r: 13, art: 'voll' },
+  DO: { name: 'Dativobjekt', frage: 'Wem?', farbe: '#2a9d5c', r: 13, art: 'ring' },
+  AD: { name: 'Adverbiale', frage: 'Wann? Wo? Wie? Warum?', farbe: '#8e44c9', r: 15, art: 'voll' },
 };
 
 /* Satzglieder durch | getrennt, Rolle vor dem Doppelpunkt. Nomen und Namen großgeschrieben. */

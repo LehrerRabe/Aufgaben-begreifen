@@ -1,30 +1,32 @@
 /* Wortartensymbole: Form, Farbe und Größe je Wortart, dazu Merkfragen für die Tipps.
-   Verbreitete Zuordnung in der Grammatik mit Symbolen. Die Quellen weichen bei einzelnen
-   Farben voneinander ab (z. B. Artikel hellblau oder blau) – hier lassen sie sich zentral ändern. */
+   Eigene Farbzuordnung der App (bewusst nicht die klassischen Materialfarben):
+   Nomen blau, Verb rot, Adjektiv grün wie in vielen Schulbüchern; Begleiter und Stellvertreter des
+   Nomens in Nachbarfarben (Artikel gelb, Pronomen türkis), Adverb beerenrot nahe beim Verb.
+   Alle Farben lassen sich hier zentral ändern. */
 
 export const WORTARTEN = {
-  N: { name: 'Nomen', zusatz: 'Namenwort', farbe: '#1c1c1c', form: 'dreieck', groesse: 1,
+  N: { name: 'Nomen', zusatz: 'Namenwort', farbe: '#1f5fd1', form: 'dreieck', groesse: 1,
     frage: 'Kann man es sehen, anfassen oder benennen? Nomen schreibt man groß, und man kann der, die oder das davorsetzen.',
     beispiele: 'Hund, Haus, Lea' },
-  A: { name: 'Artikel', zusatz: 'Begleiter', farbe: '#6cc2ee', form: 'dreieck', groesse: 0.55,
+  A: { name: 'Artikel', zusatz: 'Begleiter', farbe: '#e8a317', form: 'dreieck', groesse: 0.55,
     frage: 'Es ist ein kleiner Begleiter, der vor einem Nomen steht: der, die, das, ein, eine.',
     beispiele: 'der, die, das, ein, eine' },
-  J: { name: 'Adjektiv', zusatz: 'Eigenschaftswort', farbe: '#1d3a9a', form: 'dreieck', groesse: 0.78,
+  J: { name: 'Adjektiv', zusatz: 'Eigenschaftswort', farbe: '#2a9d5c', form: 'dreieck', groesse: 0.78,
     frage: 'Es sagt, wie etwas oder jemand ist. Frage: Wie ist das …?',
     beispiele: 'groß, rot, alt' },
-  V: { name: 'Verb', zusatz: 'Tunwort', farbe: '#e0262b', form: 'kreis', groesse: 1,
+  V: { name: 'Verb', zusatz: 'Tunwort', farbe: '#d7263d', form: 'kreis', groesse: 1,
     frage: 'Es sagt, was jemand tut oder was geschieht. Probiere: ich …, du …, er …',
     beispiele: 'laufen, singt, liest' },
-  D: { name: 'Adverb', zusatz: 'Umstandswort', farbe: '#f28a12', form: 'kreis', groesse: 0.55,
+  D: { name: 'Adverb', zusatz: 'Umstandswort', farbe: '#c2407f', form: 'kreis', groesse: 0.55,
     frage: 'Es sagt, wann, wo oder wie gern etwas geschieht: heute, dort, gern, oft …',
     beispiele: 'heute, dort, gern' },
-  P: { name: 'Pronomen', zusatz: 'Fürwort', farbe: '#7d3cc2', form: 'spitz', groesse: 1,
+  P: { name: 'Pronomen', zusatz: 'Fürwort', farbe: '#13a3a8', form: 'spitz', groesse: 1,
     frage: 'Es steht für ein Nomen: ich, du, er, sie, es, wir, ihr, uns …',
     beispiele: 'ich, du, er, sie' },
-  R: { name: 'Präposition', zusatz: 'Verhältniswort', farbe: '#2f9e4f', form: 'mond', groesse: 0.95,
+  R: { name: 'Präposition', zusatz: 'Verhältniswort', farbe: '#9a6233', form: 'mond', groesse: 0.95,
     frage: 'Es zeigt, wie Dinge zueinander stehen, oft einen Ort: auf, unter, in, mit, hinter …',
     beispiele: 'auf, unter, mit' },
-  K: { name: 'Konjunktion', zusatz: 'Bindewort', farbe: '#f27bb0', form: 'balken', groesse: 0.9,
+  K: { name: 'Konjunktion', zusatz: 'Bindewort', farbe: '#6b7280', form: 'balken', groesse: 0.9,
     frage: 'Es verbindet Wörter oder Sätze: und, oder, aber, denn.',
     beispiele: 'und, oder, aber' },
 };

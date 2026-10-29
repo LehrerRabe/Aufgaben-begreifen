@@ -174,6 +174,7 @@ Menü: **Deutsch → Wortarten → Wortarten untersuchen**. Über jedes Wort ein
 (Symbol antippen und dann das Wort, oder Symbol auf das Wort ziehen). Drei Stufen mit je 12 Sätzen:
 Stufe 1 Nomen, Artikel, Adjektiv, Verb · Stufe 2 dazu Pronomen, Präposition, Konjunktion · Stufe 3 dazu Adverb.
 Hilfen: Namen zeigen, Tipp (Merkfrage zum Wort), Prüfen, Lösung zeigen. Merkkarte mit allen Symbolen auf der Auswahlseite.
+Farben (eigene Zuordnung der App): Nomen blau, Artikel gelb, Adjektiv grün, Verb rot, Adverb beerenrot, Pronomen türkis, Präposition braun, Konjunktion grau.
 Symbole und Farben stehen in `wortsymbole.js`, die Sätze in `wortarten.js`.
 
 - **Zeitformen** (`zeitstrahl.js`): *Wann passiert es?* – Satz auf den Zeitstrahl legen (vor der Vergangenheit / Vergangenheit / jetzt / Zukunft), dann die Zeitform benennen; danach derselbe Satz in allen fünf Zeitformen, Verbteile farbig.
@@ -184,8 +185,8 @@ Symbole und Farben stehen in `wortsymbole.js`, die Sätze in `wortarten.js`.
 ## Deutsch: Sätze und Wörter
 
 - **Satzglieder:** 1. Umstellprobe – Wort antippen, sein Satzglied rückt an Stelle 1, das Prädikat bleibt an Stelle 2.
-  2. Symbole zuordnen, am Ende Satzbild. Symbole: Prädikat roter Kreis, Subjekt großer schwarzer Kreis, Akkusativobjekt kleiner schwarzer Kreis
-  (nach verbreiteten Satzzerlegungs-Materialien); **Dativobjekt (schwarzer Ring) und Adverbiale (oranger Kreis) sind eigene Wahl** – in `satzglieder.js` änderbar.
+  2. Symbole zuordnen, am Ende Satzbild. Symbole (eigene Farben der App): Prädikat großer roter Kreis, Subjekt großer blauer Kreis, Akkusativobjekt kleiner grüner Kreis,
+  Dativobjekt grüner Ring, Adverbiale violetter Kreis – in `satzglieder.js` änderbar.
 - **Wortbausteine:** Vorsilbe (blau) + Wortstamm (rot) + Endung (grün) für die Familien *fahr, spiel, schreib*; Wörter bauen und Wörter zerlegen.
   Die Liste gültiger Wörter steht in `wortbausteine.js`.
 - **Das Feldermodell** (`felder.js`): Satzglieder in Vorfeld | linke Klammer | Mittelfeld | rechte Klammer | Nachfeld legen.
