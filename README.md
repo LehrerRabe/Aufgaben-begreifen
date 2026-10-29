@@ -204,6 +204,34 @@ Symbole und Farben stehen in `wortsymbole.js`, die Sätze in `wortarten.js`.
 - **Textmapping** (`textmapping.js`): Sachtext (Igel, Vulkane, Honigbiene) in vier Schritten: Überschriften markieren, fett gedruckte Schlüsselwörter markieren,
   Schlüsselwörter an die Text-Karte hängen, drei Fragen mit Rückverweis auf den Abschnitt beantworten.
 
+## Deutsch: Grundlegendes mit einem Bild verbinden
+
+Jeder Baustein verknüpft eine Regel mit einem festen Bild. Die Kinder handeln zuerst am Bild (antippen, legen, schieben), dann folgt die Regel.
+
+- **Adjektive steigern** (`steigerung.js`, Wortarten): *Siegertreppe* – Grundstufe, Vergleichsstufe, Höchststufe auf drei Stufen, ein Männchen steigt mit.
+  Unregelmäßige Adjektive (gut, viel, gern, hoch, nah) stehen auf einer goldenen *Sondertreppe*. Reiter: Treppe bauen / Selbst steigern.
+- **Pronomen** (`pronomen.js`, Wortarten): Pronomen sind *Masken*, dahinter steckt ein Nomen. Maske antippen, dann das Nomen; bei zwei möglichen Personen „Unklar!“.
+  Reiter: Wer steckt dahinter? / Maske aufsetzen (Wiederholung durch er/sie/es, ihm/ihr, ihn ersetzen).
+- **Nomen-Puzzle** (`komposita.js`, Sätze und Wörter): Bestimmungswort + Grundwort als Puzzleteile mit Artikel-Fahne. Die Fahne des letzten Teils wandert nach vorn,
+  der Großbuchstabe des zweiten Teils wird klein, Fugenlaute (n, s) als eigenes Teil. Reiter: Zusammensetzen / Zerlegen.
+- **Die vier Fälle** (`faelle.js`, Sätze und Wörter): vier *Türen* mit Fragewort (Wer oder was? · Wessen? · Wem? · Wen oder was?). Das Nomen geht durch jede Tür
+  und „zieht sich um“. Reiter: Durch die Türen (Formen zuordnen, Beispielsatz hinter der Tür) / Welche Tür? (Fall im Satz bestimmen).
+- **Satzarten** (`satzmelodie.js`, Satzzeichen): *Stimmmelodie* – Linie geht am Ende runter (.), hoch (?), dick und laut (!). Anhören über die Sprachausgabe des Geräts.
+  Hinweis in der App: Bei W-Fragen geht die Stimme oft nicht hoch. Reiter: Melodie → Zeichen / Zeichen → Melodie.
+- **Wörtliche Rede** (`rede.js`, Satzzeichen): Die Rede ist eine *Sprechblase*: Wo sie aufgeht „ (unten), wo sie zugeht “ (oben). Zeichen in Lücken tippen.
+  Reiter: Begleitsatz vorne / Begleitsatz hinten.
+- **Komma im Satzgefüge** (`satzzug.js`, Satzzeichen): Hauptsatz = Zug mit Lok, Nebensatz = Wagen, Bindewort = gelber Kupplungswagen, Verb = roter Wagen,
+  Komma = Kupplung. Kupplung wählen → Verb-Wagen ans Ende → (bei „Wagen vorne“ Hauptsatz-Verb nach vorn) → Komma-Lücke antippen.
+- **Lang oder kurz?** (`vokallaenge.js`, Rechtschreibung): *Gummiband* – langer Vokal dehnt das Band, kurzer lässt es schnappen. Dann ie/i bzw. ß/ss wählen.
+  Zwielaute zählen wie lang. Anhören über die Sprachausgabe des Geräts. Ergänzt das Silbenhaus.
+- **Wortfelder** (`wortfeld.js`, Wortschatz): *Regler* mit Stufenbildern (Schallwellen, Thermometer …). Reiter: Ordnen / Regler einstellen (Lücke im Satz füllen).
+- **Ober- und Unterbegriffe** (`oberbegriffe.js`, Wortschatz): *Schrank mit Schubladen*. Reiter: Einräumen / Beschriften (Schilder anbringen, zwei passen nicht).
+- **Spannungsberg** (`spannungsberg.js`, Schreiben): Abschnitte einer Geschichte an Einleitung, Hauptteil, Höhepunkt (Gipfel) und Schluss legen; ein Wanderer steigt mit.
+- **Argumentieren** (`argument.js`, Schreiben, eher Klasse 6/7): *Tisch mit drei Beinen* – Behauptung, Begründung, Beispiel. Fehlt ein Bein, kippt der Tisch.
+  Reiter: Tisch bauen (ein Satz passt nicht) / Was fehlt?
+
+Farben im Deutsch-Bereich sind eine eigene Zuordnung der App (siehe `wortsymbole.js` und `satzglieder.js`).
+
 ## Hintergrund je Fach
 
 `hintergrund.js` hat ein Motiv je Fach (Startseite: Mischung). Für ein neues Fach dort einen Eintrag ergänzen
@@ -246,6 +274,7 @@ Neue Bausteine nutzen `geruest.js` (Kopf, Reiter, Sprechblase, Material links, A
 - `zuordnung.js`, `terme.js`, `zufall.js`, `winkel.js` – Zuordnungen, Terme/Waage, Wahrscheinlichkeit, Winkel
 - `wortsymbole.js`, `wortarten.js`, `nomenprobe.js`, `satzglieder.js`, `wortbausteine.js`, `felder.js`, `zeitstrahl.js` – Deutsch: Wortarten und Sätze
 - `silbenhaus.js`, `wortfamilie.js`, `dassdas.js`, `textmapping.js` – Deutsch: Rechtschreibung und Lesen
+- `steigerung.js`, `pronomen.js`, `komposita.js`, `faelle.js`, `satzmelodie.js`, `rede.js`, `satzzug.js`, `vokallaenge.js`, `wortfeld.js`, `oberbegriffe.js`, `spannungsberg.js`, `argument.js` – Deutsch: Grundlegendes mit einem Bild verbinden
 - `menue.js`, `bilder.js`, `hintergrund.js`, `logo.js` – Menü, Kachelbilder, Hintergründe, Icon
 - `manifest.webmanifest`, `icon*.png`, `icon.svg` – für den Home-Bildschirm
 

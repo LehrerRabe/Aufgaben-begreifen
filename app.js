@@ -70,6 +70,18 @@ import { starteWortfamilie } from './wortfamilie.js';
 import { starteZeitstrahl } from './zeitstrahl.js';
 import { starteDassDas } from './dassdas.js';
 import { starteTextmapping } from './textmapping.js';
+import { starteSatzzug } from './satzzug.js';
+import { starteRede } from './rede.js';
+import { starteKomposita } from './komposita.js';
+import { starteFaelle } from './faelle.js';
+import { starteSteigerung } from './steigerung.js';
+import { starteSatzmelodie } from './satzmelodie.js';
+import { starteWortfeld } from './wortfeld.js';
+import { starteOberbegriffe } from './oberbegriffe.js';
+import { starteVokallaenge } from './vokallaenge.js';
+import { starteSpannungsberg } from './spannungsberg.js';
+import { startePronomen } from './pronomen.js';
+import { starteArgument } from './argument.js';
 
 
 /** Bausteine, die ohne Aufgabenwahl direkt starten. */
@@ -85,6 +97,8 @@ const DIREKT = {
   schaetzen: starteSchaetzen, uhr: starteUhr, raum: starteRaum, dreiecke: starteDreiecke,
   abakus: starteAbakus, stellenwerttafel: starteStellenwerttafel, einheitentafel: starteEinheitentafel, schrittstrahl: starteSchrittstrahl,
   satzglieder: starteSatzglieder, wortbausteine: starteWortbausteine, nomenprobe: starteNomenprobe,
+  satzzug: starteSatzzug, rede: starteRede, komposita: starteKomposita, faelle: starteFaelle, steigerung: starteSteigerung, satzmelodie: starteSatzmelodie,
+  wortfeld: starteWortfeld, oberbegriffe: starteOberbegriffe, vokallaenge: starteVokallaenge, spannungsberg: starteSpannungsberg, pronomen: startePronomen, argument: starteArgument,
 };
 
 const MODULE = { addition, subtraktion, multiplikation, division };

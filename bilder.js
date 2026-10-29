@@ -592,6 +592,45 @@ const ZEICHNUNGEN = {
       + zeichen(125, 155, 'das', 44) + `<rect x="210" y="90" width="320" height="100" rx="14" fill="#fff"/>` + zeichen(370, 162, 'Laufen', 64, '#1b2340')
       + `<path d="M226 110 q14 -30 30 0" stroke="#e0262b" stroke-width="6" fill="none"/>`,
 
+  /* ---- Deutsch: Erweiterung (Bilder zum Begreifen) ---- */
+  'satzzeichen-ordner': () => zeichen(150, 200, '.', 150) + zeichen(250, 200, ',', 150) + zeichen(360, 200, '?', 150, '#ffd34d') + zeichen(460, 200, '!', 150),
+  'wortschatz-ordner': () => [[90, 'Hut'], [230, 'Mütze'], [390, 'Kappe']].map(([x, w], i) => `<rect x="${x}" y="${90 + i * 18}" width="${i === 1 ? 150 : 130}" height="70" rx="12" fill="#fff" opacity="${1 - i * .12}"/>` + zeichen(x + (i === 1 ? 75 : 65), 138 + i * 18, w, 34, '#1b2340')).join('') + `<rect x="150" y="215" width="300" height="40" rx="10" fill="#ffd34d"/>` + zeichen(300, 245, 'Kleidung', 30, '#5a3a00'),
+  'schreiben-ordner': () => [0, 1, 2, 3].map(i => `<rect x="120" y="${80 + i * 40}" width="${i === 3 ? 200 : 300}" height="12" rx="6" fill="#fff" opacity=".9"/>`).join('')
+    + `<g transform="translate(430 60) rotate(30)"><rect width="34" height="170" rx="6" fill="#ffd34d" stroke="#fff" stroke-width="3"/><path d="M0 170 17 210 34 170Z" fill="#f4c59a" stroke="#fff" stroke-width="3"/><path d="M11 196 17 210 23 196Z" fill="#333"/></g>`,
+  steigerung: () => `<rect x="110" y="190" width="120" height="70" fill="#fff" opacity=".75"/><rect x="230" y="140" width="120" height="120" fill="#fff" opacity=".88"/><rect x="350" y="90" width="120" height="170" fill="#fff"/>`
+    + zeichen(170, 245, '1', 46, '#2f63c9') + zeichen(290, 220, '2', 46, '#2f63c9') + zeichen(410, 190, '3', 46, '#2f63c9')
+    + `<circle cx="410" cy="40" r="14" fill="#f4c59a"/><path d="M396 88 L400 58 Q410 52 420 58 L424 88Z" fill="#ffd34d"/><path d="M398 62 L384 44 M422 62 L436 44" stroke="#f4c59a" stroke-width="6" stroke-linecap="round"/>`,
+  pronomen: () => `<path d="M150 110 Q300 40 450 110 Q450 230 345 230 Q315 230 300 190 Q285 230 255 230 Q150 230 150 110Z" fill="#fff"/>
+    <ellipse cx="235" cy="145" rx="42" ry="26" fill="#13a3a8"/><ellipse cx="365" cy="145" rx="42" ry="26" fill="#13a3a8"/>` + zeichen(300, 285, 'er · sie · es', 40),
+  komposita: () => `<rect x="90" y="110" width="200" height="90" rx="14" fill="#ffd34d"/><circle cx="290" cy="155" r="22" fill="#ffd34d"/>
+    <path d="M330 110 H510 A14 14 0 0 1 524 124 V186 A14 14 0 0 1 510 200 H330 V177 A22 22 0 0 0 330 133Z" fill="#9ad1ff"/>`
+    + zeichen(190, 172, 'Haus', 50, '#3a2c00') + zeichen(430, 172, 'tür', 50, '#0d2a52')
+    + `<line x1="345" y1="110" x2="345" y2="70" stroke="#fff" stroke-width="5"/><rect x="345" y="58" width="70" height="34" rx="6" fill="#d7263d"/>` + zeichen(380, 84, 'die', 26),
+  faelle: () => ['#1f5fd1', '#8e44c9', '#e8a317', '#2a9d5c'].map((f, i) => `<rect x="${70 + i * 120}" y="70" width="100" height="180" rx="8" fill="#8b6b4a"/><rect x="${78 + i * 120}" y="78" width="84" height="172" rx="4" fill="${f}" stroke="#fff" stroke-width="3"/><circle cx="${148 + i * 120}" cy="165" r="7" fill="#ffd34d"/>` + zeichen(120 + i * 120, 140, i + 1, 48)).join(''),
+  vokallaenge: () => `<circle cx="80" cy="110" r="18" fill="#f4c59a"/><circle cx="520" cy="110" r="18" fill="#f4c59a"/><rect x="95" y="104" width="410" height="12" rx="6" fill="#fff"/>`
+    + `<circle cx="250" cy="215" r="18" fill="#f4c59a"/><circle cx="350" cy="215" r="18" fill="#f4c59a"/><rect x="266" y="200" width="68" height="30" rx="14" fill="#fff"/>`
+    + zeichen(300, 85, 'ie · ß', 44) + zeichen(470, 230, 'i · ss', 40),
+  satzmelodie: () => `<path d="M60 90 H190 L240 130" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>` + zeichen(265, 145, '.', 70)
+    + `<path d="M330 110 H440 L490 60" fill="none" stroke="#ffd34d" stroke-width="8" stroke-linecap="round"/>` + zeichen(520, 90, '?', 60, '#ffd34d')
+    + `<path d="M120 205 L150 185 H380 L440 230" fill="none" stroke="#fff" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>` + zeichen(480, 260, '!', 80),
+  rede: () => `<circle cx="100" cy="150" r="34" fill="#f4c59a"/><path d="M60 280 Q60 200 100 192 Q140 200 140 280Z" fill="#fff"/>
+    <rect x="170" y="70" width="380" height="120" rx="50" fill="#fff"/><path d="M200 175 L160 215 L240 182Z" fill="#fff"/>` + zeichen(360, 150, '„Hallo!“', 60, '#1f5fd1'),
+  satzzug: () => `<line x1="30" y1="232" x2="570" y2="232" stroke="#fff" stroke-width="6" opacity=".7"/>
+    <rect x="40" y="140" width="100" height="70" rx="10" fill="#1f4aa0" stroke="#fff" stroke-width="3"/><rect x="95" y="100" width="45" height="50" rx="6" fill="#1f4aa0" stroke="#fff" stroke-width="3"/>`
+    + [[160, '#2f63c9'], [270, '#2f63c9'], [400, '#f2b72e'], [490, '#23935a']].map(([x, f]) => `<rect x="${x}" y="150" width="${x === 400 ? 70 : 90}" height="60" rx="8" fill="${f}" stroke="#fff" stroke-width="3"/><circle cx="${x + 20}" cy="218" r="11" fill="#3b3f4a" stroke="#fff" stroke-width="3"/><circle cx="${x + (x === 400 ? 50 : 70)}" cy="218" r="11" fill="#3b3f4a" stroke="#fff" stroke-width="3"/>`).join('')
+    + `<circle cx="65" cy="218" r="13" fill="#3b3f4a" stroke="#fff" stroke-width="3"/><circle cx="115" cy="218" r="13" fill="#3b3f4a" stroke="#fff" stroke-width="3"/>` + zeichen(383, 205, ',', 110, '#ffd34d'),
+  wortfeld: () => `<rect x="70" y="160" width="460" height="22" rx="11" fill="#fff" opacity=".85"/><circle cx="390" cy="171" r="26" fill="#ffd34d" stroke="#fff" stroke-width="5"/>
+    <path d="M70 100 h16 l20 -18 v56 l-20 -18 h-16z" fill="#fff"/>
+    <path d="M470 100 h16 l20 -18 v56 l-20 -18 h-16z" fill="#fff"/>` + [0, 1, 2].map(k => `<path d="M${516 + k * 14} ${86 - k * 6} q${12 + k * 3} ${24 + k * 6} 0 ${48 + k * 12}" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>`).join('')
+    + zeichen(160, 250, 'flüstern', 34) + zeichen(440, 250, 'schreien', 34),
+  oberbegriffe: () => `<rect x="170" y="40" width="260" height="235" rx="14" fill="#b07b4a" stroke="#fff" stroke-width="4"/><rect x="225" y="22" width="150" height="40" rx="8" fill="#fff8e6"/>` + zeichen(300, 52, 'Tiere', 28, '#3a2c00')
+    + [0, 1, 2].map(i => `<rect x="188" y="${78 + i * 64}" width="224" height="52" rx="8" fill="#d9a46c" stroke="#8b5e34" stroke-width="3"/><rect x="200" y="${92 + i * 64}" width="110" height="24" rx="5" fill="#fff8e6"/><rect x="345" y="${99 + i * 64}" width="50" height="10" rx="5" fill="#6b4423"/>`).join(''),
+  spannungsberg: () => `<path d="M30 270 C150 250 200 180 250 140 S300 50 330 55 S400 150 450 210 S520 265 570 270Z" fill="#fff" opacity=".9"/>
+    <line x1="330" y1="55" x2="330" y2="10" stroke="#fff" stroke-width="5"/><path d="M330 10 l40 12 l-40 12z" fill="#ffd34d"/>`,
+  argument: () => `<rect x="110" y="110" width="380" height="26" rx="8" fill="#fff"/><rect x="140" y="136" width="22" height="130" rx="5" fill="#1f5fd1" stroke="#fff" stroke-width="3"/>
+    <rect x="289" y="136" width="22" height="130" rx="5" fill="#d7263d" stroke="#fff" stroke-width="3"/><rect x="438" y="136" width="22" height="130" rx="5" fill="#2a9d5c" stroke="#fff" stroke-width="3"/>
+    <rect x="200" y="62" width="200" height="50" rx="10" fill="#fff8e6"/>` + zeichen(300, 98, 'Meinung?', 30, '#3a2c00'),
+
   stufe1: () => `${stern(300, 140, 70)}${perle(140, 220)}${perle(170, 230)}${perle(460, 225)}`,
   stufe2: () => `${stern(220, 140, 62)}${stern(380, 140, 62)}${perle(110, 230)}${perle(500, 225)}`,
   stufe3: () => `${stern(150, 150, 54)}${stern(300, 120, 62)}${stern(450, 150, 54)}${perle(300, 245)}`,
