@@ -338,6 +338,11 @@ const ZEICHNUNGEN = {
     [1, 2, 3, 4, 6].forEach((n, r) => { for (let i = 0; i < n; i++) s += `<rect x="${80 + i * 440 / n}" y="${40 + r * 46}" width="${440 / n - 4}" height="38" rx="6" fill="${['#ff5a5a', '#ff9f43', '#ffd34d', '#4cd387', '#55b7ff'][r]}" stroke="#fff" stroke-width="2"/>`; });
     return s + `<line x1="300" y1="25" x2="300" y2="275" stroke="#fff" stroke-width="6" stroke-dasharray="10 7"/>`;
   },
+  'prozent-hundertstel': () => {
+    let s = '';
+    for (let i = 0; i < 100; i++) { const x = 205 + (i % 10) * 19, y = 45 + Math.floor(i / 10) * 19; s += `<rect x="${x}" y="${y}" width="16" height="16" rx="2" fill="${i < 75 ? '#ffd34d' : 'rgba(255,255,255,.35)'}"/>`; }
+    return s + zeichen(90, 170, '¾', 90) + zeichen(520, 170, '75 %', 64);
+  },
   'bruch-quotient': () => {
     const teil = (cx, cy, r, i, m, f) => { const a0 = -Math.PI / 2 + i * 2 * Math.PI / m, a1 = a0 + 2 * Math.PI / m; return `<path d="M${cx} ${cy} L${cx + r * Math.cos(a0)} ${cy + r * Math.sin(a0)} A${r} ${r} 0 0 1 ${cx + r * Math.cos(a1)} ${cy + r * Math.sin(a1)}Z" fill="${f}" stroke="#fff" stroke-width="3"/>`; };
     const farben = ['#ff5a5a', '#55b7ff', '#4cd387', '#ffd34d'];

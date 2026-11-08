@@ -96,7 +96,7 @@ function svgBruch(x, y, z, n, kl = '') {
    ===================================================================== */
 
 const KINDFARBEN = ['#e0262b', '#2f6fe4', '#2fae58', '#a64ad6', '#f07d2a', '#13a39b'];
-const NAMEN = ['Ali', 'Ben', 'Cem', 'Dana', 'Ella', 'Finn'];
+const NAMEN = ['Paul', 'Emma', 'Felix', 'Hanna', 'Lukas', 'Marie'];
 const DINGE = [
   { ein: 'Pizza', mehr: 'Pizzen', pizza: '#f6c453', rand: '#d98c2b' },
   { ein: 'Kuchen', mehr: 'Kuchen', pizza: '#e8b07a', rand: '#a8662c' },

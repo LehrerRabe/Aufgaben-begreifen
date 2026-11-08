@@ -149,6 +149,7 @@ export const MENUE = {
             { id: 'bruchstrahl', titel: 'Brüche am Zahlenstrahl', text: 'Ablesen, eintragen, Lücken füllen', bild: 'bruch-strahl', farbe: '#0e7490', modul: 'bruchstrahl' },
             { id: 'erweitern', titel: 'Erweitern', text: 'Mit dem Messer feiner schneiden', bild: 'erweitern', farbe: '#c2410c', modul: 'erweitern' },
             { id: 'kuerzen', titel: 'Kürzen', text: 'Mit dem Kleber gröber machen', bild: 'kuerzen', farbe: '#0f766e', modul: 'kuerzen' },
+            { id: 'hundertstel', titel: 'Prozente – Hundertstel', text: 'Hunderterfeld, ¾ = 75 %, vergleichen, Prozent von', bild: 'prozent-hundertstel', farbe: '#0e9f6e', modul: 'prozentbruch' },
             { id: 'teilberechnen', titel: 'Teil berechnen', text: '¾ von 24 € – über ein Stück', bild: 'teil-berechnen', farbe: '#b8327a', modul: 'teilberechnen' },
             { id: 'ganzesberechnen', titel: 'Ganzes berechnen', text: '⅖ sind 12 – wie viel ist das Ganze?', bild: 'ganzes-berechnen', farbe: '#a2337f', modul: 'ganzesberechnen' },
           ],
