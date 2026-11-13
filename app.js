@@ -61,6 +61,10 @@ import { enterSteuerung } from './enter.js';
 import { starteProzent } from './prozent.js';
 import { starteDezimal } from './dezimal.js';
 import { starteDreiformen } from './dreiformen.js';
+import { starteRunden } from './runden.js';
+import { starteBruchDezimal } from './bruchdezimal.js';
+import { startePeriode } from './periode.js';
+import { startePlausibel } from './plausibel.js';
 import { startePlusMinus } from './plusminus.js';
 import { starteZuordnung } from './zuordnung.js';
 import { starteDarstellungen } from './darstellungen.js';
@@ -94,7 +98,7 @@ import { starteArgument } from './argument.js';
 const DIREKT = {
   sieb: starteSieb, gesetze: starteGesetze, potenzen: startePotenzen,
   spiegel: starteSpiegel, vierecke: starteVierecke, koordinaten: starteKoordinaten,
-  bruchkreise: starteBruchkreise, bruchstreifen: starteBruchstreifen, anteile: starteAnteile, anteilwelcher: starteAnteilWelcher, anteilvom: starteAnteilVom, erweitern: starteErweitern, kuerzen: starteKuerzen, prozent: starteProzent, dezimal: starteDezimal, dreiformen: starteDreiformen, plusminus: startePlusMinus, zuordnung: starteZuordnung, darstellungen: starteDarstellungen, antiprop: starteAntiprop, graphen: starteGraphenGeschichten, variablen: starteVariablen, terme: starteTerme, zufall: starteZufall, winkel: starteWinkel, felder: starteFelder, silbenhaus: starteSilbenhaus, wortfamilie: starteWortfamilie, zeitstrahl: starteZeitstrahl, dassdas: starteDassDas, textmapping: starteTextmapping, teilberechnen: starteTeilBerechnen, ganzesberechnen: starteGanzesBerechnen, bruchquotient: starteBruchQuotient, bruchstrahl: starteBruchStrahl, prozentbruch: starteProzentBruch, vorzeichen: starteVorzeichen, geschickt: starteGeschickt,
+  bruchkreise: starteBruchkreise, bruchstreifen: starteBruchstreifen, anteile: starteAnteile, anteilwelcher: starteAnteilWelcher, anteilvom: starteAnteilVom, erweitern: starteErweitern, kuerzen: starteKuerzen, prozent: starteProzent, dezimal: starteDezimal, dreiformen: starteDreiformen, runden: starteRunden, bruchdezimal: starteBruchDezimal, periode: startePeriode, plausibel: startePlausibel, plusminus: startePlusMinus, zuordnung: starteZuordnung, darstellungen: starteDarstellungen, antiprop: starteAntiprop, graphen: starteGraphenGeschichten, variablen: starteVariablen, terme: starteTerme, zufall: starteZufall, winkel: starteWinkel, felder: starteFelder, silbenhaus: starteSilbenhaus, wortfamilie: starteWortfamilie, zeitstrahl: starteZeitstrahl, dassdas: starteDassDas, textmapping: starteTextmapping, teilberechnen: starteTeilBerechnen, ganzesberechnen: starteGanzesBerechnen, bruchquotient: starteBruchQuotient, bruchstrahl: starteBruchStrahl, prozentbruch: starteProzentBruch, vorzeichen: starteVorzeichen, geschickt: starteGeschickt,
   rechenrahmen: starteRechenrahmen, zahlenstrahl: starteZahlenstrahl, umtauschen: starteUmtauschen, geld: starteGeld, diagramm: starteDiagramm,
   auslegen: starteAuslegen, zerlegen: starteZerlegen, umfang: starteUmfang, einheiten: starteEinheiten,
   netze: starteNetze, quader: starteQuader, ansichten: starteAnsichten,

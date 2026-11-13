@@ -157,11 +157,16 @@ export const MENUE = {
         {
           id: 'dezimal',
           titel: 'Dezimalzahlen',
-          text: 'Stellentafel, Lupe, vergleichen',
+          text: 'Stellentafel, Bruch → Dezimalzahl, runden, periodisch',
           bild: 'dezimal-ordner',
           farbe: '#7a3cc2',
           kinder: [
             { id: 'verstehen', titel: 'Dezimalzahlen verstehen', text: 'Stellentafel, Zahlenstrahl mit Lupe, vergleichen', bild: 'dezimal', farbe: '#7a3cc2', modul: 'dezimal' },
+            { id: 'bruchdezimal', titel: 'Bruch → Dezimalzahl', text: 'Auf 10, 100, 1000 erweitern – und wann es nicht geht', bild: 'bruchdezimal', farbe: '#d97706', modul: 'bruchdezimal' },
+            { id: 'dreiformen', titel: 'Bruch, Dezimalzahl, Prozent', text: 'Ein Bild – drei Schreibweisen', bild: 'dreiformen', farbe: '#0e7490', modul: 'dreiformen' },
+            { id: 'runden', titel: 'Runden', text: 'Mit der Lupe und im Sachkontext', bild: 'runden', farbe: '#e0457b', modul: 'runden' },
+            { id: 'plausibel', titel: 'Passt das? Größen und Einheiten', text: 'Einheit wählen, Fehler finden, Stützpunkte', bild: 'plausibel', farbe: '#16a974', modul: 'plausibel' },
+            { id: 'periode', titel: 'Periodisch per Division', text: 'Reste beobachten: ⅓ = 0,333…', bild: 'periode', farbe: '#2f6fe4', modul: 'periode' },
           ],
         },
         {

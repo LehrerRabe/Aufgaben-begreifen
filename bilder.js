@@ -413,6 +413,15 @@ const ZEICHNUNGEN = {
     [3, 0, 7].forEach((n, i) => { for (let j = 0; j < n; j++) s += `<circle cx="${135 + i * 130 + (j % 4) * 24}" cy="${125 + Math.floor(j / 4) * 26}" r="10" fill="${f[i]}" stroke="#fff" stroke-width="2"/>`; });
     return s + zeichen(232, 150, ',', 90) + zeichen(300, 270, '3,07', 56);
   },
+  runden: () => `<line x1="70" y1="150" x2="530" y2="150" stroke="#fff" stroke-width="7"/>` + [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(i => `<line x1="${90 + i * 42}" y1="${i === 5 ? 118 : 134}" x2="${90 + i * 42}" y2="${i === 5 ? 182 : 166}" stroke="${i === 5 ? '#ffd34d' : '#fff'}" stroke-width="${i === 5 ? 7 : 4}"/>`).join('')
+    + `<circle cx="90" cy="150" r="24" fill="none" stroke="#fff" stroke-width="5"/><circle cx="510" cy="150" r="24" fill="#fff"/><circle cx="410" cy="150" r="11" fill="#2f6fe4" stroke="#fff" stroke-width="3"/>`
+    + zeichen(410, 100, '2,37', 40) + zeichen(300, 260, '2,37 ≈ 2,4', 52),
+  bruchdezimal: () => zeichen(130, 165, '¾', 120) + zeichen(260, 150, '=', 70) + ``
+    + `<text x="390" y="125" font-size="56" font-weight="800" text-anchor="middle" fill="#fff">75</text><rect x="330" y="140" width="120" height="7" rx="3" fill="#fff"/><text x="390" y="200" font-size="56" font-weight="800" text-anchor="middle" fill="#fff">100</text>`
+    + zeichen(300, 275, '= 0,75', 56),
+  periode: () => `<text x="300" y="150" font-size="96" font-weight="800" text-anchor="middle" fill="#fff">0,<tspan text-decoration="overline">3</tspan></text><rect x="318" y="62" width="58" height="9" rx="4" fill="#ffd34d"/>`
+    + [1, 1, 1, 1].map((r, i) => `<circle cx="${180 + i * 80}" cy="225" r="26" fill="${i === 3 ? '#ffd34d' : 'rgba(255,255,255,.9)'}"/>` + `<text x="${180 + i * 80}" y="238" font-size="36" font-weight="800" text-anchor="middle" fill="#2f6fe4">${r}</text>`).join(''),
+  plausibel: () => zeichen(170, 175, '🥚', 120) + zeichen(400, 140, '60 g ✓', 56) + `<text x="400" y="230" font-size="52" font-weight="800" text-anchor="middle" fill="#fff" opacity=".85" text-decoration="line-through">60 kg</text>`,
   dreiformen: () => {
     let s = '';
     for (let r = 0; r < 10; r++) for (let c = 0; c < 10; c++) s += `<rect x="${70 + c * 19}" y="${55 + r * 19}" width="17" height="17" rx="2" fill="${r * 10 + c < 75 ? '#ffd34d' : 'rgba(255,255,255,.3)'}"/>`;
