@@ -388,6 +388,12 @@ const ZEICHNUNGEN = {
     for (let i = -4; i <= 4; i++) s += `<line x1="${300 + i * 55}" y1="${i ? 175 : 165}" x2="${300 + i * 55}" y2="${i ? 205 : 215}" stroke="#fff" stroke-width="${i ? 4 : 7}"/>`;
     return s + zeichen(300, 255, '0', 46) + zeichen(150, 120, '−', 120, '#ffd34d') + zeichen(450, 130, '+', 110, '#ffd34d');
   },
+  geschickt: () => {
+    const karte = (x, y, t, f) => `<rect x="${x}" y="${y}" width="120" height="76" rx="14" fill="#fff" stroke="${f}" stroke-width="7"/>` + zeichen(x + 60, y + 56, t, 48, f);
+    return karte(40, 50, '+4,3', '#1f5fd1') + karte(175, 50, '−2,7', '#e0262b') + karte(310, 50, '+5,7', '#1f5fd1') + karte(445, 50, '−1,3', '#e0262b')
+      + `<path d="M100 135 Q 235 215 370 135" fill="none" stroke="#ffd34d" stroke-width="7"/><path d="M235 135 Q 370 215 505 135" fill="none" stroke="#fff" stroke-width="6" stroke-dasharray="12 9"/>`
+      + zeichen(300, 270, '= 10 + (−4) = 6', 46);
+  },
   vorzeichen: () => {
     const kreis = (x, y, t, f) => `<circle cx="${x}" cy="${y}" r="42" fill="${f}" stroke="#fff" stroke-width="5"/>` + zeichen(x, y + 26, t, 78);
     return kreis(120, 95, '−', '#e0262b') + zeichen(205, 118, '·', 70) + kreis(290, 95, '−', '#e0262b') + zeichen(380, 120, '=', 70) + kreis(470, 95, '+', '#1f5fd1')
@@ -424,6 +430,31 @@ const ZEICHNUNGEN = {
     let s = `<line x1="60" y1="110" x2="540" y2="110" stroke="#fff" stroke-width="7"/><line x1="60" y1="200" x2="540" y2="200" stroke="#ffd34d" stroke-width="7"/>`;
     [[80, '0', '0'], [190, '1', '2'], [410, '3', '6'], [520, '5', '?']].forEach(([x, o, u]) => { s += `<line x1="${x}" y1="96" x2="${x}" y2="214" stroke="#fff" stroke-width="3"/>` + zeichen(x, 80, o, 36) + zeichen(x, 250, u, 36, '#ffd34d'); });
     return s + `<path d="M410 60 Q300 10 196 60" fill="none" stroke="#fff" stroke-width="4"/>` + zeichen(300, 38, ': 3', 30);
+  },
+  variablen: () => {
+    let s = `<rect x="200" y="95" width="200" height="110" rx="22" fill="#fff" opacity=".25" stroke="#fff" stroke-width="5"/>`;
+    s += `<path d="M90 150 H180 M420 150 H510" stroke="#fff" stroke-width="7" marker-end=""/><path d="M170 138 l14 12 -14 12 M500 138 l14 12 -14 12" fill="none" stroke="#fff" stroke-width="7"/>`;
+    return s + zeichen(300, 168, '4x+3', 52) + zeichen(70, 166, 'x', 48, '#ffd34d') + zeichen(550, 166, 'y', 48, '#ffd34d') + `<rect x="120" y="245" width="360" height="10" rx="5" fill="#fff" opacity=".5"/><circle cx="250" cy="250" r="16" fill="#ffd34d" stroke="#fff" stroke-width="4"/>`;
+  },
+  darstellungen: () => {
+    let s = `<rect x="40" y="60" width="160" height="90" rx="8" fill="#fff" opacity=".9"/>`;
+    for (let i = 1; i < 4; i++) s += `<line x1="${40 + i * 40}" y1="60" x2="${40 + i * 40}" y2="150" stroke="#5a46f0" stroke-width="3"/>`;
+    s += `<line x1="40" y1="105" x2="200" y2="105" stroke="#5a46f0" stroke-width="3"/>`;
+    s += `<path d="M250 250 V60 M250 250 H560" stroke="#fff" stroke-width="6"/><path d="M250 250 L540 80" stroke="#ffd34d" stroke-width="9" stroke-linecap="round"/>`;
+    s += `<circle cx="395" cy="165" r="14" fill="#ffd34d" stroke="#fff" stroke-width="4"/>`;
+    return s + zeichen(120, 240, 'y = 2x', 46);
+  },
+  graphen: () => {
+    let s = `<path d="M60 240 L180 140 L280 140 L380 60 L540 240" fill="none" stroke="#ffd34d" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>`;
+    s += `<path d="M50 250 H560 M50 250 V40" stroke="#fff" stroke-width="6"/>`;
+    return s + figur(200, 70, 1.2, '#16a974');
+  },
+  antiprop: () => {
+    let s = '';
+    for (let r = 0; r < 2; r++) for (let c = 0; c < 6; c++) s += `<circle cx="${70 + c * 34}" cy="${80 + r * 34}" r="14" fill="#ffd34d" stroke="#fff" stroke-width="3"/>`;
+    for (let r = 0; r < 4; r++) for (let c = 0; c < 3; c++) s += `<circle cx="${110 + c * 34}" cy="${170 + r * 30}" r="12" fill="#fff" opacity=".9"/>`;
+    s += `<path d="M300 250 V40 M300 250 H570" stroke="#fff" stroke-width="6"/><path d="M325 50 Q350 220 560 232" fill="none" stroke="#ffd34d" stroke-width="9" stroke-linecap="round"/>`;
+    return s + zeichen(440, 120, 'x·y', 54);
   },
   'terme-ordner': () => zeichen(300, 190, '2n + 2', 110),
   terme: () => {

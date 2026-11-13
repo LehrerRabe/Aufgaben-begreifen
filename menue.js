@@ -167,12 +167,13 @@ export const MENUE = {
         {
           id: 'rational',
           titel: 'Rationale Zahlen',
-          text: 'Malnehmen und Teilen mit Vorzeichen',
+          text: 'Rechnen mit Vorzeichen, geschickt rechnen',
           bild: 'rational-ordner',
           farbe: '#c2410c',
           kinder: [
             { id: 'plusminus', titel: 'Plus und Minus mit Vorzeichen', text: 'Plättchen und Nullpaare, Frosch', bild: 'plusminus', farbe: '#e0262b', modul: 'plusminus' },
             { id: 'vorzeichen', titel: 'Mal und Geteilt mit Vorzeichen', text: 'Muster, Zahlenstrahl, Vorzeichen-Detektiv', bild: 'vorzeichen', farbe: '#2f6fe4', modul: 'vorzeichen' },
+            { id: 'geschickt', titel: 'Geschickt rechnen', text: 'Rechengesetze nutzen: zusammenfassen, ausklammern, zerlegen', bild: 'geschickt', farbe: '#16a974', modul: 'geschickt' },
           ],
         },
         {
@@ -189,11 +190,15 @@ export const MENUE = {
         {
           id: 'zuordnungen',
           titel: 'Zuordnungen',
-          text: 'Doppelskala und Dreisatz',
+          text: 'Darstellungen, proportional, antiproportional',
           bild: 'zuordnung-ordner',
           farbe: '#0e7490',
           kinder: [
+            { id: 'variablen', titel: 'Variablen-Maschine', text: 'x verändern, Gleichung, Term finden', bild: 'variablen', farbe: '#e0262b', modul: 'variablen' },
+            { id: 'darstellungen', titel: 'Darstellungs-Werkstatt', text: 'Tabelle, Graph, Formel, Tabellenkalkulation', bild: 'darstellungen', farbe: '#5a46f0', modul: 'darstellungen' },
+            { id: 'graphen', titel: 'Graphen-Geschichten', text: 'Gefäße füllen, Graph und Geschichte', bild: 'graphen', farbe: '#2f6fe4', modul: 'graphen' },
             { id: 'doppelskala', titel: 'Proportional rechnen', text: 'Doppelskala, Dreisatz, proportional?', bild: 'zuordnung', farbe: '#0e7490', modul: 'zuordnung' },
+            { id: 'antiprop', titel: 'Antiproportional begreifen', text: 'Perlenrechteck, Dreisatz, Typ erkennen', bild: 'antiprop', farbe: '#c2410c', modul: 'antiprop' },
           ],
         },
         {
