@@ -1,7 +1,7 @@
 # Aufgaben be-greifen
 
 Web-App mit digitalem Material zum Anfassen (vor allem Klasse 5) – Mathematik und Deutsch.
-App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 16 Ordner, Deutsch 4 (insgesamt 67 Bausteine).
+App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 16 Ordner, Deutsch 4 (insgesamt 76 Bausteine).
 
 ## Was die App kann
 
@@ -114,6 +114,12 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
 - **Brüche am Zahlenstrahl** (`bruchstrahl.js`): Strahl von 0 bis 1, 2 oder 3, Nenner 2–12. *Ablesen* (Pfeil), *Eintragen* (Strich antippen; manchmal ist der Strahl
   feiner eingeteilt als der Nenner → erweitern), *Lücken füllen*. Gleichwertige Brüche zählen. In allen drei Reitern: Bruchstreifen-Stücke ab 0 auf den Strahl legen („＋ Streifen 1/n anlegen“, beim Eintragen in der Größe des gesuchten Nenners) mit Anzeige k · 1/n = k/n. Tipp 1 erklärt die Einteilung, Tipp 2 zeigt alle Brüche blass am Strahl.
   Die Gestaltung bringt der Baustein selbst mit (`<style id="bq-stil">`), `app.css` bleibt unverändert.
+- **Prozente – Hundertstel** (`prozentbruch.js`, Klasse 6, Kapitel Brüche – ganz ohne Dezimalzahlen), vier Reiter:
+  *Hunderterfeld* – gefärbten Anteil als Prozent und als Bruch mit Nenner 100 ablesen. *Bruch ↔ Prozent* – Bruch (Nenner 2, 4, 5, 10, 20, 25, 50)
+  auf den Nenner 100 erweitern und als Prozent schreiben; manchmal umgekehrt: Prozent → Bruch mit Nenner 100 → gekürzt. Danach zeigt das Hunderterfeld den Anteil.
+  *Vergleichen* – zwei Kinder mit verschieden vielen Versuchen (z. B. 14 von 20 und 42 von 50): erst beide in Prozent, dann entscheiden (auch „gleich gut“).
+  *Prozent von* – Sachaufgabe (Rabatt, Bus, Saftschorle, Buch, Radtour): Prozent als Bruch schreiben (gleichwertige zählen), dann Teil berechnen;
+  Streifenbild mit n gleichen Teilen, Hinweis, wenn erst ein Teil berechnet wurde. Gestaltung im Baustein (`<style id="pb-stil">`).
 - **Anteil vom Anteil:** in 3 Schritten im Rechteck (eigene Kachel).
 - **Teil berechnen** (Anteil und Ganzes bekannt, z. B. ¾ von 24 €) und **Ganzes berechnen** (Anteil und Teil bekannt, z. B. ⅖ sind 12):
   Bruchstreifen mit Klammer über dem Ganzen und unter den gefärbten Stücken. 1. Gegebenes an die richtige Klammer eintragen
@@ -131,6 +137,14 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
   *Vorzeichen-Detektiv* – Produkte/Quotienten mit 2–4 Zahlen, umschaltbar „Ganze Zahlen“ / „Brüche und Kommazahlen“:
   1. alle negativen Zahlen antippen, 2. Vorzeichen wählen (Bild: je zwei Minus-Chips werden ein Plus), 3. Betrag eingeben (Bruch 3/4 oder Kommazahl; gleichwertige Brüche zählen).
   Die Gestaltung bringt der Baustein selbst mit (`<style id="vz-stil">`), `app.css` bleibt unverändert.
+- **Geschickt rechnen** (`geschickt.js`, Klasse 7), drei Reiter, je in drei Stufen (Ganze Zahlen / Kommazahlen / Brüche):
+  *Geschickt addieren* – Summe aus 4–6 Zahlen als Karten, jede Karte trägt ihr Vorzeichen (aus „− 2,7“ wird die Karte −2,7); zwei Karten antippen,
+  Summe eintragen, die Karten verschmelzen. Ein Schritt gilt als geschickt, wenn eine runde Zahl entsteht (Gegenzahlen, Kommastellen ergänzen sich, gleiche Nenner).
+  Am Ende Sterne für geschickte Schritte und der Rechenweg wie im Heft. Tipp 2 lässt ein gutes Paar leuchten.
+  *Geschickt multiplizieren* – dasselbe mit Faktoren (25 · 4, 0,5 · 2, ¾ · 4⁄3 …).
+  *Verteilungsgesetz* – Ausklammern (a · b + a · c) und Zerlegen/Ausmultiplizieren ((−7) · 98 = (−7) · (100 − 2), (−12) · (¾ − ⅙)): erst den geschicktesten Rechenweg
+  aus drei Vorschlägen wählen (richtig + geschickt / richtig, aber umständlich / falsch, jeweils mit Erklärung), dann die Zwischenschritte eintragen.
+  Die Gestaltung bringt der Baustein selbst mit (`<style id="gk-stil">`), `app.css` bleibt unverändert.
 - **Plus und Minus mit Vorzeichen** (`plusminus.js`): *Plättchen* – blau = +1, rot = −1; dazulegen bzw. wegnehmen, fehlende Plättchen als Nullpaare dazulegen, Nullpaare auflösen, Rest ablesen.
   *Frosch* – Rechenzeichen bestimmt die Blickrichtung (+ rechts, − umdrehen), Vorzeichen der Zahl die Hüpfrichtung (vorwärts/rückwärts); jeder Sprung einzeln.
 
@@ -140,11 +154,35 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
   *Stellentafel* – Plättchen in Z | E , z | h | t legen (+/−), zehn Plättchen einer Spalte zu einem der nächsten bündeln („10 → 1“); im Wechsel Zahl legen und gelegte Zahl lesen.
   *Zahlenstrahl mit Lupe* – in einen Abschnitt tippen zoomt hinein (Einer → Zehntel → Hundertstel → Tausendstel); Zahl finden bzw. eine Zahl zwischen zwei Nachbarn finden.
   *Vergleichen* – zwei Dezimalzahlen (auch Fallen wie 0,5 / 0,45 und 0,4 / 0,40) mit <, =, >; danach Stellentafel mit aufgefüllten Nullen und Balken.
+- **Bruch → Dezimalzahl** (`bruchdezimal.js`): 1. Nenner wählen (10, 100, 1000 oder „geht nicht“), 2. neuen Zähler eintragen (erweitern; manchmal erst kürzen: 9/12 = 3/4 = 75/100),
+  3. Dezimalzahl schreiben – die Stellenwerttafel markiert die Spalte der letzten Ziffer. Auch gemischte Zahlen; Brüche wie 1/3 → „geht nicht“ mit Parkplatz-Hinweis.
+- **Bruch, Dezimalzahl, Prozent** (`dreiformen.js`) steht zusätzlich auch in diesem Ordner.
+- **Runden** (`runden.js`), zwei Reiter: *Mit der Lupe* – Nachbarn eintragen, am vergrößerten Abschnitt (mit Mitte) den näheren Nachbarn antippen, gerundete Zahl
+  schreiben (Endnullen wie 7,0 werden verlangt); die entscheidende Ziffer wird markiert. Fallen: Übertrag (9,7 → 10), schrittweises Runden (1,449), genau die Mitte.
+  *Im Sachkontext* – Tankstelle, Körpergröße, Weitsprung (immer abrunden), Wetter, Routenplaner, Küchenwaage, Messbecher: erst sinnvolle Genauigkeit wählen, dann runden.
+- **Passt das? Größen und Einheiten** (`plausibel.js`): *Einheit wählen* (mm/cm/m/km, g/kg/t, ml/l) und *Fehlerdetektiv* („Ein Schreibtisch ist 0,75 km hoch“ – passt das?);
+  Auflösung mit Umrechnung und Stützpunkt.
+- **Periodisch per Division** (`periode.js`): Zähler : Nenner Schritt für Schritt (Ziffer und Rest eintragen, „Schritt vormachen“), Reste-Leiste;
+  Rest 0 → abbrechend, ein Rest kommt wieder → periodisch mit Periodenstrich (auch mit Vorperiode, z. B. 1/6 = 0,16̅).
+  Die vier Bausteine bringen ihre Gestaltung selbst mit (`<style>` im Baustein), `app.css` bleibt unverändert.
 
 ## Mathematik: Zuordnungen
 
 - **Proportional rechnen** (`zuordnung.js`): *Doppelskala* – zwei Zahlenstrahlen übereinander; erst auf 1 zurück (: m), dann auf die gesuchte Menge (· n), Bögen oben und unten gleich.
   *Proportional?* – Wertetabelle und Graph; entscheiden „ja/nein“, danach Quotientenzeile und Ursprungsgerade.
+- **Variablen-Maschine** (`variablen.js`): *Maschine* – Term als Rechenmaschine (x hinein, y heraus), x per Regler verändern; jedes x wird Wertepaar und Punkt, „Alle x auf einmal“ zeigt den Graphen (x als Veränderliche).
+  *Wann stimmt’s?* – Gleichungen wie 4 · x + 3 = 35 oder 3 · x + 15 = 2 · x + 20; beide Seiten als Werte und Graphen, nur ein x passt (x als Unbekannte), Merksatz Veränderliche ↔ Unbekannte.
+  *Term finden* – drei Wertepaare einer Maschine, gesucht y = a · x + b; „Mit neuem x testen“.
+- **Darstellungs-Werkstatt** (`darstellungen.js`, Multirepräsentation): *Erkunden* – proportional (y = q · x), antiproportional (y = k : x), mit Grundgebühr (y = m · x + b) mit Situation, Formel, Tabelle und Graph; Regler für Parameter und x, im Graphen ziehen oder in der Tabelle tippen; Prüfzeile y : x bzw. x · y.
+  *Zuordnen* – zu einer Situation passende Formel, Tabelle und Graph aus je drei Karten wählen.
+  *Tabellenkalkulation* – kleines Rechenblatt: Formel in B2 (z. B. =1,5*A2+4), „nach unten ausfüllen“ (relativer Bezug wandert mit), Punktdiagramm; Prüfen gegen die Sachaufgabe.
+- **Graphen-Geschichten** (`graphengeschichten.js`): *Gefäße füllen* – Füllgraph vorhersagen, dann füllen (Wasser steigt, Graph wächst mit); 6 Gefäßformen.
+  *Welcher Graph?* – Geschichte → einer von drei Graphen (Rad mit Ampel, Bäcker, Ballon, Akku, Badewanne, Zug).
+  *Erzähl’s!* – Graph mit Abschnitten A, B, C beschreiben (steigt schnell … fällt schnell, geprüft), dann eigene Geschichte schreiben; Beispielgeschichte auf Wunsch.
+- **Antiproportional begreifen** (`antiprop.js`): *Perlenrechteck* – 12/18/24/36 Perlen in Reihen legen, Perlen wandern beim Ändern der Breite; Tabelle mit x · y, Punkte im Graphen, Hyperbel, Frage „doppelte Breite → ?“.
+  *Dreisatz* – Pfeiltabelle gegensinnig (links : m, rechts · m), mit Probe über das Produkt.
+  *Typ erkennen* – Tabelle: proportional, antiproportional oder keins; danach Quotient, Produkt, Graph. Fallen: „je mehr – desto weniger“ ohne Antiproportionalität, ein einzelnes abweichendes Wertepaar.
+- `kosy.js` – gemeinsame Helfer der Zuordnungs-Bausteine (Koordinatensystem, Zahlformat, eigene Stile; app.css bleibt unverändert).
 
 ## Mathematik: Terme und Gleichungen
 
@@ -261,6 +299,7 @@ Neue Bausteine nutzen `geruest.js` (Kopf, Reiter, Sprechblase, Material links, A
 - `teilen.js`, `streifen.js`, `unterschied.js`, `ueberschlag.js` – Rechnen verstehen
 - `schaetzen.js`, `uhr.js`, `dreiecke.js`, `raum.js` – Ergänzungen (Größen, Zeit, Geometrie, Raum)
 - `prozent.js` – Prozent-Dreieck
+- `prozentbruch.js` – Prozente als Hundertstel (Klasse 6)
 - `enter.js` – Enter-Taste für alle Aufgaben: prüfen, nach richtiger Lösung nächste Aufgabe
 - `kopfrechnen.js` – Kopfrechnen (Plus/Minus mit freiem Abakus, kleines Einmaleins)
 - `abakus.js`, `stellenwerttafel.js`, `einheitentafel.js`, `schrittstrahl.js` – Stellenwerte
@@ -270,8 +309,9 @@ Neue Bausteine nutzen `geruest.js` (Kopf, Reiter, Sprechblase, Material links, A
 - `netze.js`, `quader.js`, `ansichten.js` – Körper und Volumen
 - `bruchkreise.js`, `bruchstreifen.js`, `anteile.js`, `bruchteil.js`, `bruchumformen.js`, `bruchstrahl.js` – Brüche
 - `vorzeichen.js`, `plusminus.js` – Rationale Zahlen
-- `dezimal.js`, `dreiformen.js` – Dezimalzahlen, Bruch–Dezimal–Prozent
+- `dezimal.js`, `dreiformen.js`, `bruchdezimal.js`, `runden.js`, `periode.js`, `plausibel.js` – Dezimalzahlen, Bruch–Dezimal–Prozent, Runden, Größen, Periode
 - `zuordnung.js`, `terme.js`, `zufall.js`, `winkel.js` – Zuordnungen, Terme/Waage, Wahrscheinlichkeit, Winkel
+- `variablen.js`, `darstellungen.js`, `graphengeschichten.js`, `antiprop.js`, `kosy.js` – Zuordnungen Klasse 7 (Variable, Multirepräsentation, Graphen, antiproportional)
 - `wortsymbole.js`, `wortarten.js`, `nomenprobe.js`, `satzglieder.js`, `wortbausteine.js`, `felder.js`, `zeitstrahl.js` – Deutsch: Wortarten und Sätze
 - `silbenhaus.js`, `wortfamilie.js`, `dassdas.js`, `textmapping.js` – Deutsch: Rechtschreibung und Lesen
 - `steigerung.js`, `pronomen.js`, `komposita.js`, `faelle.js`, `satzmelodie.js`, `rede.js`, `satzzug.js`, `vokallaenge.js`, `wortfeld.js`, `oberbegriffe.js`, `spannungsberg.js`, `argument.js` – Deutsch: Grundlegendes mit einem Bild verbinden
