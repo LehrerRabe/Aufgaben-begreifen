@@ -2139,3 +2139,105 @@ a.reiter:hover { border-color: var(--akzent); background: var(--flaeche); }
 .tm-antworten { display: grid; gap: .4rem; }
 .tm-antworten .kn-gross { justify-content: flex-start; text-align: left; }
 @media (max-width: 700px) { .tm-aeste { grid-template-columns: 1fr; } }
+
+/* ===== Bruchrechnen: Plus, Minus, Mal, Geteilt (bruchbild.js, bruchplus.js, bruchmal.js, bruchdurch.js) ===== */
+:root { --br-a: var(--st-blau); --br-b: #f08a24; --br-c: var(--st-gruen); --br-d: #8b5cf6; --br-e: #0fa3a3; --br-f: #e0457b; --br-linie: #1b2340; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --br-linie: #dfe6f5; --br-b: #ff9f4a; } }
+:root[data-theme="dark"] { --br-linie: #dfe6f5; --br-b: #ff9f4a; }
+.br-schalter { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .7rem; margin: 0 0 .6rem; }
+.br-schalter-hinweis { font-size: .85rem; }
+.br-bild { background: var(--flaeche); border-radius: 14px; padding: .4rem; }
+.br-svg { display: block; width: 100%; height: auto; }
+.br-bild-quadrat .br-svg { max-height: 62vh; }
+.br-st { stroke: var(--br-linie); stroke-width: 1.5; }
+.br-a { fill: var(--br-a); } .br-b { fill: var(--br-b); } .br-c { fill: var(--br-c); } .br-d { fill: var(--br-d); } .br-e { fill: var(--br-e); } .br-f { fill: var(--br-f); }
+.br-leer { fill: var(--flaeche); }
+.br-geist { fill: transparent; stroke-dasharray: 5 4; opacity: .55; }
+.br-weg { fill: var(--flaeche-2); stroke-dasharray: 5 4; }
+.br-b-rand { fill: color-mix(in srgb, var(--br-b) 22%, var(--flaeche)); stroke: var(--br-b); stroke-width: 3; }
+.br-tipp { cursor: pointer; }
+.br-tipp:hover, .br-tipp:focus-visible { filter: brightness(1.12); outline: none; stroke-width: 3.5; }
+.br-rand { fill: none; stroke: var(--br-linie); stroke-width: 3; pointer-events: none; }
+.br-ganz-text { font: 700 14px var(--schrift); fill: var(--leise); }
+.br-zeichen { font: 800 34px var(--titel); fill: var(--text); }
+.br-klein { font: 800 22px var(--titel); fill: var(--text); }
+.br-label text { font: 800 22px var(--titel); text-anchor: middle; fill: var(--text); }
+.br-label line { stroke: var(--text); stroke-width: 2.5; }
+.br-label-a text { fill: var(--br-a); } .br-label-a line { stroke: var(--br-a); }
+.br-label-b text { fill: var(--br-b); } .br-label-b line { stroke: var(--br-b); }
+.br-schnitt { stroke: var(--br-linie); stroke-width: 2.5; stroke-linecap: round; }
+.br-linie { stroke: var(--br-linie); stroke-width: 1.5; pointer-events: none; }
+.br-runde { font: 800 15px var(--titel); fill: var(--leise); text-anchor: middle; }
+.br-wahl { fill: transparent; cursor: pointer; }
+.br-wahl:hover, .br-wahl:focus-visible { fill: color-mix(in srgb, var(--br-b) 22%, transparent); outline: none; stroke: var(--br-b); stroke-width: 3; }
+.br-zeile-an { fill: color-mix(in srgb, var(--br-b) 30%, var(--flaeche)); }
+.br-achse { font: 800 17px var(--titel); text-anchor: middle; fill: var(--leise); }
+.br-achse.a { fill: var(--br-a); } .br-achse.b { fill: var(--br-b); }
+.br-mess { fill: color-mix(in srgb, var(--br-b) 18%, transparent); stroke: var(--br-b); stroke-width: 4.5; }
+.br-mess.teil { stroke-dasharray: 9 6; }
+.br-mess-zahl { font: 800 22px var(--titel); text-anchor: middle; fill: #fff; paint-order: stroke; stroke: var(--br-b); stroke-width: 5px; }
+.br-unter { margin-top: .5rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+.br-zaehler { margin: 0; font-weight: 700; }
+.br-hinweis { margin: 0; padding: .5rem .7rem; border-radius: 10px; background: var(--warn-sanft); color: var(--warn); font-weight: 700; }
+.br-aufgabe .bruch { font-size: .9em; }
+.br-deutung { margin: .2rem 0 .5rem; }
+.br-gl { font: 800 1.25rem var(--titel); }
+.br-gl .bruch-ein { font-size: 1rem; }
+.br-erw-zeile { display: flex; align-items: center; gap: .4rem; font: 800 1.25rem var(--titel); margin: .35rem 0; }
+.br-kette-zeile { font: 800 1.2rem var(--titel); margin: .3rem 0; }
+.br-fertig { font: 800 1.15rem var(--titel); color: var(--gut); margin: .5rem 0; }
+.br-gemischt { display: inline-flex; align-items: center; gap: .1em; }
+.br-ganz { font: 800 1.1em var(--titel); }
+.br-vf-box { display: grid; gap: .4rem; margin: .4rem 0 .6rem; }
+.br-vf-reihe { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
+.br-vf-kopf { font-weight: 800; font-size: .85rem; min-width: 7.2rem; }
+.br-vf-kopf.a { color: var(--br-a); } .br-vf-kopf.b { color: var(--br-b); }
+.br-vf { min-width: 2.6rem; padding: .3rem .4rem; border-radius: 999px; border: 2px solid var(--rand); background: var(--flaeche); color: var(--text); font: 800 1rem var(--titel); cursor: pointer; }
+.br-vf:hover { border-color: var(--akzent); }
+.br-vf.gewaehlt { background: var(--gut); border-color: var(--gut); color: var(--gut-text); }
+.br-vf.falsch { background: var(--schlecht-sanft); border-color: var(--schlecht); color: var(--schlecht); }
+.br-merke { margin-top: .9rem; border: 2px solid var(--rand); border-radius: 12px; background: var(--flaeche); }
+.br-merke summary { cursor: pointer; padding: .5rem .7rem; font-weight: 800; }
+.br-merke-inhalt { padding: 0 .8rem .6rem; }
+.br-merke-inhalt p { margin: .4rem 0; }
+.br-merke-bsp { font: 800 1.1rem var(--titel); }
+.br-filmknopf { background: var(--akzent); border-color: var(--akzent); color: var(--akzent-text); }
+
+/* Erklärfilm */
+.ef-huelle { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 12px; background: rgba(10, 14, 30, .62); }
+.ef-karte { width: min(860px, 100%); max-height: calc(100dvh - 24px); overflow: auto; background: var(--flaeche); color: var(--text); border-radius: 20px; box-shadow: 0 20px 60px rgba(0, 0, 0, .4); padding: .8rem 1rem 1rem; }
+.ef-kopf { display: flex; justify-content: space-between; align-items: center; gap: .5rem; font: 800 1.2rem var(--titel); }
+.ef-zu { border: 0; background: var(--flaeche-2); color: var(--text); width: 2.4rem; height: 2.4rem; border-radius: 50%; font-size: 1.1rem; cursor: pointer; }
+.ef-buehne { margin: .5rem 0; background: var(--bg); border-radius: 14px; }
+.ef-buehne svg { display: block; width: 100%; height: auto; }
+.ef-buehne svg g, .ef-buehne svg rect { transform-box: fill-box; transform-origin: center; }
+.ef-text { min-height: 3.4em; margin: .3rem 0 .5rem; font: 700 1.15rem/1.45 var(--schrift); }
+.ef-text .bruch { font-size: .95em; }
+.ef-balken { height: 6px; border-radius: 3px; background: var(--flaeche-2); overflow: hidden; }
+.ef-balken span { display: block; height: 100%; background: var(--akzent); transform-origin: left; transform: scaleX(0); }
+.ef-steuer { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-top: .7rem; }
+.ef-kn { border: 2px solid var(--rand); background: var(--flaeche); color: var(--text); border-radius: 999px; min-width: 2.8rem; height: 2.8rem; padding: 0 .8rem; font: 800 1.05rem var(--titel); cursor: pointer; }
+.ef-haupt { background: var(--akzent); border-color: var(--akzent); color: var(--akzent-text); min-width: 3.4rem; }
+.ef-vorlesen[aria-pressed="true"] { background: var(--gut-sanft); border-color: var(--gut); color: var(--gut); }
+.ef-punkte { display: flex; gap: .3rem; margin: 0 auto 0 .4rem; }
+.ef-punkt { width: .85rem; height: .85rem; border-radius: 50%; border: 2px solid var(--akzent); background: transparent; padding: 0; cursor: pointer; }
+.ef-punkt.gesehen { background: color-mix(in srgb, var(--akzent) 40%, transparent); }
+.ef-punkt.an { background: var(--akzent); transform: scale(1.25); }
+.ef-bruch text { font-family: var(--titel); font-weight: 800; fill: currentColor; }
+.ef-bruch line { stroke: currentColor; }
+.ef-bruch { color: var(--text); }
+.ef-a { color: var(--br-a); } .ef-b { color: var(--br-b); } .ef-c { color: var(--br-c); }
+.ef-t { font-family: var(--titel); font-weight: 800; fill: var(--text); }
+.ef-leise { fill: var(--leise); }
+.ef-merke { fill: var(--akzent); }
+.ef-falsch { fill: var(--schlecht); }
+.ef-zahl { fill: var(--akzent); }
+.ef-durch { stroke: var(--schlecht); stroke-width: 4; }
+.ef-kreis { fill: var(--flaeche); stroke: var(--rand); stroke-width: 3; }
+.ef-mark .ef-kreis { fill: var(--gut-sanft); stroke: var(--gut); stroke-width: 4; }
+.ef-rahmen { fill: none; stroke: var(--gut); stroke-width: 5; }
+.ef-hilfslinie { stroke: var(--schlecht); stroke-width: 3; stroke-dasharray: 8 6; }
+@media (max-width: 560px) { .ef-text { font-size: 1rem; } .ef-punkte { order: 5; width: 100%; margin: .3rem 0 0; justify-content: center; } }
+.tb-antwort.zwischen { background: var(--gut-sanft); color: var(--gut); }
+.br-kette-zeile .bruch, .br-fertig .bruch, .br-gl .bruch, .br-erw-zeile .bruch, .br-deutung .bruch { font-size: 1.12em; }
+.ef-verbind { stroke: var(--gut); stroke-width: 4; stroke-linecap: round; }

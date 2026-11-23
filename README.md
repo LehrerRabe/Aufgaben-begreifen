@@ -1,7 +1,7 @@
 # Aufgaben be-greifen
 
 Web-App mit digitalem Material zum Anfassen (vor allem Klasse 5) – Mathematik und Deutsch.
-App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 16 Ordner, Deutsch 4 (insgesamt 76 Bausteine).
+App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 16 Ordner, Deutsch 4 (insgesamt 94 Bausteine).
 
 ## Was die App kann
 
@@ -105,6 +105,16 @@ Ergänzungen in anderen Ordnern: **Größen schätzen** (Stützpunkte, Balkenwaa
   2. Messer schneidet jedes Stück in 2–5 Teile bzw. Kleber klebt je 2–6 Stücke zusammen – kurze Animation (Messer fährt die Schnitte ab, Kleber lässt die Linien verschwinden);
      beim Kürzen Rückmeldung, wenn die Zahl nicht passt (Stücke bleiben übrig / gefärbtes mit weißem Stück verklebt),
   3. neuen Anteil ablesen, 4. Gleichung mit Bögen „· k“ bzw. „: k“. Beim Kürzen kann weiter geklebt werden, bis der Bruch vollständig gekürzt ist (Kette 12/16 = 6/8 = 3/4).
+- **Bruchrechnen: Plus, Minus, Mal, Geteilt** (`bruchplus.js`, `bruchmal.js`, `bruchdurch.js`, gemeinsame Bilder in `bruchbild.js`).
+  Jede Kachel hat einen **Erklärfilm** (🎬, animiert, mit Pause, Szenen-Sprung und „Vorlesen“ über die Sprachausgabe des Geräts; `erklaerfilm.js`),
+  einen gestuften **Tipp**, einen aufklappbaren **Merke**-Kasten und den Schalter **„bis 1 / auch über 1“** (gemischte Zahlen; wird gemerkt).
+  Nach dem Ergebnis folgen bei Bedarf „kürzen“, „ganze Zahl“ und „gemischte Zahl“.
+  - *Addieren* und *Subtrahieren*, je zwei Stufen: **Gleiche Nenner** – Stücke antippen, sie rutschen zusammen (Plus) bzw. werden weggenommen (Minus);
+    **Verschiedene Nenner** – gemeinsamen Nenner aus zwei Vielfachen-Reihen antippen, das **Messer zerschneidet** die Stücke (Animation „gleichnamig machen“),
+    neue Zähler eintragen, dann wie Stufe 1. Typische Fehler (Nenner addiert) bekommen eine eigene Rückmeldung.
+  - *Multiplizieren*: **Bruch · Zahl** – den Bruch k-mal dazulegen; **Bruch · Bruch** – Flächenmodell: Spalten färben, quer schneiden, Zeilen wählen, grüne Stücke zählen.
+  - *Dividieren*: **Bruch : Zahl** – quer in k Zeilen schneiden, eine Zeile = ein Teil; **Bruch : Bruch** – gleichnamig machen, Messstreifen anlegen
+    („Wie oft passt …?“, auch teilweise), Ergebnis als Bruch, Kontrolle mit dem Kehrwert.
 - **Bruch als Quotient** (`bruchstrahl.js`): *Gerecht verteilen* – z Pizzen/Kuchen/Pfannkuchen an n Kinder (auch mehr Ganze als Kinder).
   1. Die Kinder wählen selbst, in wie viele Stücke jedes Ganze geschnitten wird (2–12; erlaubt ist jede Zahl, bei der z · m Stücke gerecht auf n Kinder aufgehen –
      sonst Rückmeldung „es bleiben Stücke übrig“), 2. die Kinder tippen die Stücke selbst an – jedes fliegt reihum auf den Teller des Kindes mit dem Ring,
@@ -308,6 +318,8 @@ Neue Bausteine nutzen `geruest.js` (Kopf, Reiter, Sprechblase, Material links, A
 - `auslegen.js`, `zerlegen.js`, `umfang.js`, `einheiten.js` – Flächen und Umfang
 - `netze.js`, `quader.js`, `ansichten.js` – Körper und Volumen
 - `bruchkreise.js`, `bruchstreifen.js`, `anteile.js`, `bruchteil.js`, `bruchumformen.js`, `bruchstrahl.js` – Brüche
+- `bruchbild.js`, `bruchplus.js`, `bruchmal.js`, `bruchdurch.js` – Bruchrechnen (Plus, Minus, Mal, Geteilt)
+- `erklaerfilm.js` – Abspieler für die Erklärfilme
 - `vorzeichen.js`, `plusminus.js` – Rationale Zahlen
 - `dezimal.js`, `dreiformen.js`, `bruchdezimal.js`, `runden.js`, `periode.js`, `plausibel.js` – Dezimalzahlen, Bruch–Dezimal–Prozent, Runden, Größen, Periode
 - `zuordnung.js`, `terme.js`, `zufall.js`, `winkel.js` – Zuordnungen, Terme/Waage, Wahrscheinlichkeit, Winkel

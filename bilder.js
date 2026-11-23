@@ -377,6 +377,27 @@ const ZEICHNUNGEN = {
     s += `<g transform="translate(443 70) rotate(8)"><path d="M-7 -8 L0 6 L7 -8 L7 -60 Q0 -68 -7 -60 Z" fill="#eef2f6" stroke="#5b6675" stroke-width="3"/><rect x="-9" y="-104" width="18" height="44" rx="6" fill="#8b5a2b"/></g>`;
     return s + zeichen(300, 255, '⅔ = ⁴⁄₆', 54);
   },
+  'bruch-plus': () => {
+    const st = (y, n, k, f) => Array.from({ length: n }, (_, i) => `<rect x="${110 + i * 380 / n}" y="${y}" width="${380 / n}" height="54" fill="${i < k ? f : 'rgba(255,255,255,.28)'}" stroke="#fff" stroke-width="4"/>`).join('');
+    return st(40, 4, 1, '#ffd34d') + st(112, 6, 2, '#ff9a3c') + zeichen(70, 160, '+', 70) + zeichen(300, 262, '¼ + ⅓ = ⁷⁄₁₂', 50);
+  },
+  'bruch-minus': () => {
+    let s = '';
+    for (let i = 0; i < 6; i++) s += `<rect x="${110 + i * 64}" y="70" width="64" height="80" fill="${i < 3 ? '#ffd34d' : i < 5 ? 'rgba(255,255,255,.18)' : 'rgba(255,255,255,.3)'}" stroke="#fff" stroke-width="4" ${i >= 3 && i < 5 ? 'stroke-dasharray="10 8"' : ''}/>`;
+    s += `<rect x="318" y="20" width="58" height="70" rx="4" fill="#ffd34d" stroke="#fff" stroke-width="4" transform="rotate(-14 347 55)" opacity=".85"/><rect x="390" y="4" width="58" height="70" rx="4" fill="#ffd34d" stroke="#fff" stroke-width="4" transform="rotate(12 419 39)" opacity=".7"/>`;
+    return s + zeichen(300, 250, '⁵⁄₆ − ²⁄₆ = ³⁄₆', 50);
+  },
+  'bruch-mal': () => {
+    let s = '';
+    for (let c = 0; c < 4; c++) for (let r = 0; r < 3; r++) s += `<rect x="${200 + c * 50}" y="${30 + r * 50}" width="50" height="50" fill="${c < 3 && r < 2 ? '#ffd34d' : c < 3 ? 'rgba(255,255,255,.55)' : 'rgba(255,255,255,.2)'}" stroke="#fff" stroke-width="4"/>`;
+    return s + zeichen(300, 262, '⅔ · ¾ = ½', 52);
+  },
+  'bruch-durch': () => {
+    let s = '';
+    for (let i = 0; i < 8; i++) s += `<rect x="${110 + i * 47.5}" y="80" width="47.5" height="64" fill="${i < 6 ? '#ffd34d' : 'rgba(255,255,255,.28)'}" stroke="#fff" stroke-width="4"/>`;
+    for (let k = 0; k < 2; k++) s += `<rect x="${114 + k * 142.5}" y="66" width="134.5" height="92" rx="14" fill="none" stroke="#ff7a3c" stroke-width="7"/><text x="${181 + k * 142.5}" y="56" text-anchor="middle" font-size="34" font-weight="800" fill="#fff">${k + 1}</text>`;
+    return s + zeichen(300, 262, '¾ : ⅜ = 2', 52);
+  },
   kuerzen: () => {
     let s = '';
     for (let i = 0; i < 6; i++) s += `<rect x="${70 + i * 76}" y="90" width="72" height="90" rx="6" fill="${i < 4 ? '#ffd34d' : 'rgba(255,255,255,.3)'}" stroke="#fff" stroke-width="4"/>`;

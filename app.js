@@ -92,10 +92,14 @@ import { starteVokallaenge } from './vokallaenge.js';
 import { starteSpannungsberg } from './spannungsberg.js';
 import { startePronomen } from './pronomen.js';
 import { starteArgument } from './argument.js';
+import { starteBruchAddition, starteBruchSubtraktion } from './bruchplus.js';
+import { starteBruchMal } from './bruchmal.js';
+import { starteBruchDurch } from './bruchdurch.js';
 
 
 /** Bausteine, die ohne Aufgabenwahl direkt starten. */
 const DIREKT = {
+  bruchplus: starteBruchAddition, bruchminus: starteBruchSubtraktion, bruchmal: starteBruchMal, bruchdurch: starteBruchDurch,
   sieb: starteSieb, gesetze: starteGesetze, potenzen: startePotenzen,
   spiegel: starteSpiegel, vierecke: starteVierecke, koordinaten: starteKoordinaten,
   bruchkreise: starteBruchkreise, bruchstreifen: starteBruchstreifen, anteile: starteAnteile, anteilwelcher: starteAnteilWelcher, anteilvom: starteAnteilVom, erweitern: starteErweitern, kuerzen: starteKuerzen, prozent: starteProzent, dezimal: starteDezimal, dreiformen: starteDreiformen, runden: starteRunden, bruchdezimal: starteBruchDezimal, periode: startePeriode, plausibel: startePlausibel, plusminus: startePlusMinus, zuordnung: starteZuordnung, darstellungen: starteDarstellungen, antiprop: starteAntiprop, graphen: starteGraphenGeschichten, variablen: starteVariablen, terme: starteTerme, zufall: starteZufall, winkel: starteWinkel, felder: starteFelder, silbenhaus: starteSilbenhaus, wortfamilie: starteWortfamilie, zeitstrahl: starteZeitstrahl, dassdas: starteDassDas, textmapping: starteTextmapping, teilberechnen: starteTeilBerechnen, ganzesberechnen: starteGanzesBerechnen, bruchquotient: starteBruchQuotient, bruchstrahl: starteBruchStrahl, prozentbruch: starteProzentBruch, vorzeichen: starteVorzeichen, geschickt: starteGeschickt,
