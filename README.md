@@ -3,6 +3,18 @@
 Web-App mit digitalem Material zum Anfassen (vor allem Klasse 5) – Mathematik und Deutsch.
 App-Symbol: eine Faust umgreift eine Perlenstange (`logo.js`, Entwurf `greifen`; PNG-Symbole mit `node icons.mjs`). Zugang mit Passwort, danach ein buntes Kachelmenü. Mathematik hat 16 Ordner, Deutsch 4 (insgesamt 94 Bausteine).
 
+## Suche und Jahrgangsstufen
+
+- **Suchfeld** auf der Startseite und in jedem Ordner (`suche.js`): durchsucht alle Kacheln – Titel, Untertitel, Ordner und den Curriculum-Verweis.
+  Groß-/Kleinschreibung und Umlaute sind egal (`brueche`, `BRÜCHE`, `bruche`), doppelte Buchstaben werden zusammengezogen (`koma` = `Komma`),
+  Tippfehler werden toleriert (ab 4 Buchstaben einer, ab 8 Buchstaben zwei: `wnkel`, `dreisaz`, `porzent`). Mehrere Wörter grenzen ein.
+  Alltagswörter werden mitgedacht (`plus` → addieren, `geteilt` → dividieren, `komma` → Dezimalzahlen …).
+- **Jahrgangsfilter** „Klasse: alle · 5 · 6 · 7 · 8“ – auch ohne Suchwort (zeigt alle Kacheln der Klasse).
+  Die Suche steht in der Adresse (`#?q=bruch&j=6`), „Zurück“ aus einer Kachel führt wieder zu den Treffern.
+- **Jahrgangsstufe auf jeder Kachel** (Abzeichen oben rechts, z. B. „Kl. 5–6“; Ordner zeigen den Bereich ihrer Kacheln) und darunter der Verweis (📘).
+  Quelle in `jahrgaenge.js`: Mathematik nach dem schulinternen Curriculum Mathematik SI (G9), Deutsch nach dem Kernlehrplan Deutsch G9 NRW
+  (der KLP unterscheidet nur „Ende der Erprobungsstufe“ = Kl. 5–6 und „erste Stufe Sek I“ – hier als Kl. 7–8 gelesen).
+
 ## Was die App kann
 
 | Rechenart | Material | Ablauf am Material |
@@ -320,6 +332,7 @@ Neue Bausteine nutzen `geruest.js` (Kopf, Reiter, Sprechblase, Material links, A
 - `bruchkreise.js`, `bruchstreifen.js`, `anteile.js`, `bruchteil.js`, `bruchumformen.js`, `bruchstrahl.js` – Brüche
 - `bruchbild.js`, `bruchplus.js`, `bruchmal.js`, `bruchdurch.js` – Bruchrechnen (Plus, Minus, Mal, Geteilt)
 - `erklaerfilm.js` – Abspieler für die Erklärfilme
+- `suche.js`, `jahrgaenge.js` – Suche (fehlertolerant) und Jahrgangsstufen der Kacheln
 - `vorzeichen.js`, `plusminus.js` – Rationale Zahlen
 - `dezimal.js`, `dreiformen.js`, `bruchdezimal.js`, `runden.js`, `periode.js`, `plausibel.js` – Dezimalzahlen, Bruch–Dezimal–Prozent, Runden, Größen, Periode
 - `zuordnung.js`, `terme.js`, `zufall.js`, `winkel.js` – Zuordnungen, Terme/Waage, Wahrscheinlichkeit, Winkel

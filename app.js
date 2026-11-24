@@ -1,6 +1,8 @@
 /* Aufgaben be-greifen – Zugang, Menü, Aufgabenwahl, Arbeitsplatz */
 
 import { MENUE, kette } from './menue.js';
+import { JAHRGAENGE, jahrgaengeVon, jgText } from './jahrgaenge.js';
+import { suche, alleJahrgaenge } from './suche.js';
 import { kachelBild } from './bilder.js';
 import { STUFEN, neueAufgabe, pruefeEigene } from './aufgaben.js';
 import { arbeitsplatz } from './arbeitsplatz.js';
@@ -229,24 +231,110 @@ function kopf(k, pfad, extra = []) {
 
 const fuss = () => `<footer class="fuss"><button type="button" class="link-knopf" id="abmelden">Abmelden</button></footer>`;
 
-function kachel({ href, titel, text, bild, farbe, attrs = '' }) {
+function kachel({ href, titel, text, bild, farbe, attrs = '', jg = [], quelle = '', ort = '' }) {
   const tag = href ? 'a' : 'button';
+  const badge = jg.length ? `<span class="kachel-jg" title="Jahrgangsstufe">${jgText(jg)}</span>` : '';
   return `<${tag} class="kachel" ${href ? `href="${href}"` : 'type="button"'} ${attrs} style="--farbe:${farbe}">
-    <span class="kachel-bild">${kachelBild(bild, farbe)}</span>
+    <span class="kachel-bild">${kachelBild(bild, farbe)}${badge}</span>
     <span class="kachel-text">
+      ${ort ? `<span class="kachel-ort">${ESC(ort)}</span>` : ''}
       <span class="kachel-titel">${ESC(titel)}</span>
       <span class="kachel-zusatz">${ESC(text)}</span>
+      ${quelle ? `<span class="kachel-quelle"><span aria-hidden="true">📘</span> ${ESC(quelle)}</span>` : ''}
     </span>
   </${tag}>`;
 }
 
+/* ---------- Suche ---------- */
+
+let suchZustand = { q: '', jg: null };
+function sucheLeiste({ q, jg }, fokus = false) {
+  const stufen = alleJahrgaenge();
+  return `<div class="suche-leiste" role="search">
+    <label class="suche-feld"><span class="suche-lupe" aria-hidden="true">🔍</span>
+      <input type="search" id="suche-eingabe" value="${ESC(q)}" placeholder="Suchen – z. B. Brüche, Winkel, Komma …" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Kacheln suchen"${fokus ? ' data-fokus' : ''}>
+    </label>
+    <div class="jg-filter" role="group" aria-label="Jahrgangsstufe">
+      <span class="jg-filter-titel">Klasse:</span>
+      <button type="button" class="jg-knopf" data-jg="" aria-pressed="${!jg}">alle</button>
+      ${stufen.map(s => `<button type="button" class="jg-knopf" data-jg="${s}" aria-pressed="${jg === s}">${s}</button>`).join('')}
+    </div>
+  </div>`;
+}
+function suchHash({ q, jg }) {
+  const p = new URLSearchParams();
+  if (q) p.set('q', q);
+  if (jg) p.set('j', String(jg));
+  return '#?' + p.toString();
+}
+function trefferHtml({ q, jg }) {
+  const liste = suche(q, jg);
+  const was = [q ? `„${ESC(q)}“` : '', jg ? `Klasse ${jg}` : ''].filter(Boolean).join(' · ');
+  if (!q && !jg) return '<p class="suche-info">Tippe ein Suchwort ein oder wähle eine Klasse.</p>';
+  if (!liste.length) return `<p class="suche-info">Nichts gefunden für ${was}. Probiere ein anderes Wort${jg ? ' oder „alle“ Klassen' : ''}.</p>`;
+  const kacheln = liste.map(e => kachel({
+    href: '#' + e.pfad.join('.'), titel: e.knoten.titel, text: e.knoten.text, bild: e.knoten.bild, farbe: e.knoten.farbe,
+    jg: e.jg, quelle: e.quelle, ort: e.ordner.join(' › '),
+  })).join('');
+  return `<p class="suche-info" aria-live="polite"><b>${liste.length}</b> ${liste.length === 1 ? 'Kachel' : 'Kacheln'} für ${was}</p><div class="kacheln">${kacheln}</div>`;
+}
+function zeigeSuche(params) {
+  suchZustand = { q: params.get('q') ?? '', jg: Number(params.get('j')) || null };
+  setzeHintergrund([]);
+  app.innerHTML = `${kopf([MENUE], [], ['Suche'])}
+  <main class="seite" id="inhalt">
+    <div class="seiten-titel"><h1>Suche</h1><p>In allen Kacheln – Groß- und Kleinschreibung und kleine Tippfehler sind egal.</p></div>
+    ${sucheLeiste(suchZustand, true)}
+    <div id="suche-treffer">${trefferHtml(suchZustand)}</div>
+  </main>${fuss()}`;
+}
+let suchUhr = null, basisHash = '#';
+/** Suche aktualisieren – im Menü direkt auf der Seite (Tastatur bleibt offen), Adresse merkt sich die Suche. */
+function sucheAendern(neu) {
+  suchZustand = { ...suchZustand, ...neu };
+  const treffer = document.getElementById('suche-treffer');
+  if (!treffer) return;
+  const aktiv = Boolean(suchZustand.q.trim() || suchZustand.jg);
+  const menue = document.getElementById('menue-kacheln');
+  const istSuchAdresse = location.hash.startsWith('#?');
+  if (menue) {
+    if (aktiv && !istSuchAdresse) { basisHash = location.hash || '#'; history.pushState(null, '', suchHash(suchZustand)); }
+    else if (aktiv) history.replaceState(null, '', suchHash(suchZustand));
+    else if (istSuchAdresse) history.replaceState(null, '', basisHash);
+    menue.hidden = aktiv;
+    treffer.hidden = !aktiv;
+    const titel = document.querySelector('.start-held, .seiten-titel');
+    if (titel) titel.classList.toggle('gedimmt', aktiv);
+  } else history.replaceState(null, '', suchHash(suchZustand));
+  treffer.innerHTML = trefferHtml(suchZustand);
+  document.querySelectorAll('.jg-knopf').forEach(b => b.setAttribute('aria-pressed', String((Number(b.dataset.jg) || null) === suchZustand.jg)));
+}
+document.addEventListener('input', e => {
+  if (e.target.id !== 'suche-eingabe') return;
+  clearTimeout(suchUhr);
+  const q = e.target.value;
+  suchUhr = setTimeout(() => sucheAendern({ q }), 140);
+});
+document.addEventListener('click', e => {
+  const b = e.target.closest('.jg-knopf');
+  if (b) sucheAendern({ jg: Number(b.dataset.jg) || null });
+});
+document.addEventListener('keydown', e => {
+  if (e.target.id === 'suche-eingabe' && e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); clearTimeout(suchUhr); sucheAendern({ q: e.target.value }); e.target.blur(); }
+}, true);
+
 /* ---------- Seiten ---------- */
 
 function zeigeMenue(k, pfad) {
+  suchZustand = { q: '', jg: null };
   const knoten = k[k.length - 1];
-  const kacheln = knoten.kinder.map(kind => kachel({
-    href: '#' + [...pfad, kind.id].join('.'), titel: kind.titel, text: kind.text, bild: kind.bild, farbe: kind.farbe,
-  })).join('');
+  const kacheln = knoten.kinder.map(kind => {
+    const p = [...pfad, kind.id], info = JAHRGAENGE[p.join('.')];
+    return kachel({
+      href: '#' + p.join('.'), titel: kind.titel, text: kind.text, bild: kind.bild, farbe: kind.farbe,
+      jg: jahrgaengeVon(p, kind), quelle: info?.quelle ?? '',
+    });
+  }).join('');
   const titel = pfad.length === 0
     ? `<div class="start-held">
         <span class="start-logo">${iconSvg(undefined, { id: 'held', xmlns: false })}</span>
@@ -263,7 +351,9 @@ function zeigeMenue(k, pfad) {
   app.innerHTML = `${kopf(k, pfad)}
   <main class="seite${pfad.length === 0 ? ' startseite' : ''}" id="inhalt">
     ${titel}
-    <div class="kacheln">${kacheln}</div>
+    ${sucheLeiste({ q: '', jg: null })}
+    <div class="kacheln" id="menue-kacheln">${kacheln}</div>
+    <div id="suche-treffer" hidden></div>
   </main>${fuss()}`;
 }
 
@@ -498,6 +588,7 @@ function route() {
   if (!istFrei()) { zeigeZugang(); return; }
   document.body.className = 'ist-app';
   const roh = location.hash.replace(/^#/, '');
+  if (roh.startsWith('?')) { zeigeSuche(new URLSearchParams(roh.slice(1))); window.scrollTo(0, 0); return; }
   let pfad = roh ? roh.split('.').filter(Boolean) : [];
   const rechnen = pfad[pfad.length - 1] === 'rechnen';
   if (rechnen) pfad = pfad.slice(0, -1);

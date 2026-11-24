@@ -2241,3 +2241,22 @@ a.reiter:hover { border-color: var(--akzent); background: var(--flaeche); }
 .tb-antwort.zwischen { background: var(--gut-sanft); color: var(--gut); }
 .br-kette-zeile .bruch, .br-fertig .bruch, .br-gl .bruch, .br-erw-zeile .bruch, .br-deutung .bruch { font-size: 1.12em; }
 .ef-verbind { stroke: var(--gut); stroke-width: 4; stroke-linecap: round; }
+
+/* ===== Suche und Jahrgangsstufen (suche.js, jahrgaenge.js) ===== */
+.kachel-bild { position: relative; }
+.kachel-jg { position: absolute; top: .55rem; right: .55rem; padding: .2rem .55rem; border-radius: 999px; background: var(--flaeche); color: var(--text);
+  font: 800 .85rem/1.2 var(--titel); box-shadow: 0 2px 8px rgba(0, 0, 0, .18); border: 2px solid var(--farbe); }
+.kachel-ort { font-size: .78rem; font-weight: 700; color: var(--farbe); letter-spacing: .01em; }
+.kachel-quelle { margin-top: .35rem; font-size: .78rem; line-height: 1.3; color: var(--leise); }
+.suche-leiste { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin: 0 0 1.2rem; }
+.suche-feld { flex: 1 1 18rem; display: flex; align-items: center; gap: .4rem; background: var(--flaeche); border: 2px solid var(--rand); border-radius: 999px; padding: .15rem .9rem; box-shadow: var(--schatten); }
+.suche-feld:focus-within { border-color: var(--akzent); }
+.suche-feld input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; color: var(--text); font: 600 1.1rem var(--schrift); padding: .55rem 0; }
+.suche-lupe { font-size: 1.05rem; }
+.jg-filter { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; }
+.jg-filter-titel { font-weight: 800; color: var(--leise); margin-right: .1rem; }
+.jg-knopf { min-width: 2.6rem; height: 2.6rem; padding: 0 .7rem; border-radius: 999px; border: 2px solid var(--rand); background: var(--flaeche); color: var(--text); font: 800 1rem var(--titel); cursor: pointer; }
+.jg-knopf:hover { border-color: var(--akzent); }
+.jg-knopf[aria-pressed="true"] { background: var(--akzent); border-color: var(--akzent); color: var(--akzent-text); }
+.suche-info { margin: 0 0 .9rem; color: var(--leise); font-weight: 600; }
+.gedimmt { display: none; }
